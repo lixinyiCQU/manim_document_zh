@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>coordinate坐标3D &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="plot_3D" href="plots_3D.html" />
+    <link rel="prev" title="plot_2D" href="plots_2D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">coordinate坐标系</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Coordinate坐标系基础.html">Coordinate坐标系基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphScene二维坐标类.html">GraphScene二维坐标类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_2D.html">plot_2D</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">coordinate坐标3D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">坐标系类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#numberline">0 数轴类 NumberLine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coordinatesystem">1 坐标系抽象类 CoordinateSystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#axes">2 二维坐标类 Axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#threedaxes">3 三维坐标系类 ThreeDAxes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numberplane">4 NumberPlane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complexplane">5 ComplexPlane</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plots_3D.html">plot_3D</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">coordinate坐标系</a> &raquo;</li>
+        
+      <li>coordinate坐标3D</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/5.Coordinate坐标系/CoordinateSystem坐标系类.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="coordinate3d">
+<h1>coordinate坐标3D<a class="headerlink" href="#coordinate3d" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>早期Elteoremadebeethoven有个仓库和配套的youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+这部分不是我写的，我只是想把Markdown、pdf等资料整合编辑成方便的文档格式，以方便查阅使用Manim，cai-hust已授权，表示标明链接仓库就行。</p>
+</div>
+<div class="section" id="id1">
+<h2>坐标系类<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="numberline">
+<h3>0 数轴类 NumberLine<a class="headerlink" href="#numberline" title="永久链接至标题">¶</a></h3>
+<p>继承于Line,属性如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">LIGHT_GREY</span><span class="p">,</span>
+        <span class="c1"># X的范围</span>
+        <span class="s2">&quot;x_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="n">FRAME_X_RADIUS</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span><span class="p">:</span> <span class="n">FRAME_X_RADIUS</span><span class="p">,</span>
+        <span class="c1"># 单元格的大小，默认和单位长度一致</span>
+        <span class="s2">&quot;unit_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="c1"># 是否包含刻度tick</span>
+        <span class="s2">&quot;include_ticks&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># tick的尺寸，大小为：2个单位*tick_size</span>
+        <span class="s2">&quot;tick_size&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="c1"># tick的分布密度</span>
+        <span class="s2">&quot;tick_frequency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="c1"># Defaults to value near x_min s.t. 0 is a tick</span>
+        <span class="c1"># TODO, rename this</span>
+        <span class="s2">&quot;leftmost_tick&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="c1"># Change name</span>
+        <span class="c1"># 最长的tick,作者原意应该是作为数轴标识的tick,一般为中间的tick即原点，会画长一点</span>
+        <span class="s2">&quot;numbers_with_elongated_ticks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="c1"># 标上数字</span>
+        <span class="s2">&quot;include_numbers&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># 显示的数字格式</span>
+        <span class="s2">&quot;numbers_to_show&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;longer_tick_multiple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="c1"># 中间的数字</span>
+        <span class="s2">&quot;number_at_center&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;number_scale_val&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+        <span class="s2">&quot;label_direction&quot;</span><span class="p">:</span> <span class="n">DOWN</span><span class="p">,</span>
+        <span class="s2">&quot;line_to_number_buff&quot;</span><span class="p">:</span> <span class="n">MED_SMALL_BUFF</span><span class="p">,</span>
+        <span class="c1"># 包含箭头</span>
+        <span class="s2">&quot;include_tip&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># tip:箭头，下面两个是其尺寸设置</span>
+        <span class="s2">&quot;tip_width&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+        <span class="s2">&quot;tip_height&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+        <span class="s2">&quot;decimal_number_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;num_decimal_places&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="c1"># 从数字标记中去掉0这个标记</span>
+        <span class="s2">&quot;exclude_zero_from_default_numbers&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>注意其中x<em>min，x</em>max均为帧的左右范围即每帧的最左边和最右边</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1567675075732.png" />
+</div>
+<p>本质上来说，数轴是一条线（Line），每一个间隔（tick）均为小的线(Line)</p>
+<p>整个构建流程是，先画出横线作为坐标轴，然后从左到右画出一个个小竖线，最后增加数字，箭头等小部件</p>
+</div>
+<div class="section" id="coordinatesystem">
+<h3>1 坐标系抽象类 CoordinateSystem<a class="headerlink" href="#coordinatesystem" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;dimension&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="n">FRAME_X_RADIUS</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span><span class="p">:</span> <span class="n">FRAME_X_RADIUS</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="n">FRAME_Y_RADIUS</span><span class="p">,</span>
+        <span class="s2">&quot;y_max&quot;</span><span class="p">:</span> <span class="n">FRAME_Y_RADIUS</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>主要的几个抽象方法：</p>
+<p><strong>coords指的是坐标轴中的点的值,point指没有坐标轴时真实的坐标，在创建坐标轴时候中心设置在ORIGIN，坐标大小没有缩放的时候两者是一样的</strong></p>
+<ul>
+<li><p>coords<em>to</em>point(*coords)；c2p(*coords):将坐标系中的点的坐标值转换为屏幕上的点</p></li>
+<li><p>point<em>to</em>coords(point)；p2c(point)：coords<em>to</em>point逆方法</p></li>
+<li><p>get_axes():得到CoordinateSystem对象，一般为包含x,y,z坐标的数组</p></li>
+<li><p>get_axis(index):得到index对应的坐标，xyz坐标对应的index分别为1，2，3</p></li>
+<li><p>get<em>x</em>axis();get<em>y</em>axis();get<em>z</em>axis()</p></li>
+<li><p>get<em>axis</em>label一类：给对应的坐标（轴）添加标签，显示标签，并返回标签对象</p>
+<ul class="simple">
+<li><p>get<em>axis</em>label(label<em>tex, axis, edge, direction,
+buff=MED</em>SMALL_BUFF):</p></li>
+<li><p>get<em>axis</em>labels(x<em>label</em>tex=”x”, y<em>label</em>tex=”y”)：</p></li>
+<li><p>get<em>x</em>axis<em>label(label</em>tex, edge=RIGHT, direction=DL,
+**kwargs)：</p></li>
+<li><p>get<em>y</em>axis<em>label(label</em>tex, edge=UP, direction=DR,
+**kwargs):</p></li>
+</ul>
+<p>label_tex:坐标标签，使用latex字符串(TexMobject)</p>
+<p>axis:想获取的坐标标签的对应的坐标对象</p>
+<p>edge:四个边缘位置</p>
+<p>direction：在坐标轴的相对位置</p>
+<p>**kwargs:其他在config内的配置，如颜色等，自行修改</p>
+</li>
+</ul>
+<p>get_graph(function, **kwargs):给定方程，绘制图像并返回</p>
+<p>get<em>parametric</em>curve(function,
+**kwargs):绘制给定参数曲线方程并返回</p>
+<p>input<em>to</em>graph_point(x, graph):暂时没搞清楚啥玩意</p>
+</div>
+<div class="section" id="axes">
+<h3>2 二维坐标类 Axes<a class="headerlink" href="#axes" title="永久链接至标题">¶</a></h3>
+<p>继承CoordinateSystem</p>
+<p>实质是创造两个NumberLine数轴，然后将其中一个按照中心旋转90度，作为Y轴，然后对X，Y轴进行其他的属性进行调整，所以配置里面有”number<em>line</em>config”</p>
+<p><strong>Axes(**kwargs)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="c1"># 数轴的配置</span>
+        <span class="s2">&quot;number_line_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">LIGHT_GREY</span><span class="p">,</span>
+            <span class="s2">&quot;include_tip&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;exclude_zero_from_default_numbers&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">},</span>
+     <span class="c1"># 横坐标轴和数轴的默认配置一样不需要修改</span>
+        <span class="s2">&quot;x_axis_config&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;y_axis_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="c1"># 默认将“y”这个标签放在纵坐标轴的左侧</span>
+            <span class="s2">&quot;label_direction&quot;</span><span class="p">:</span> <span class="n">LEFT</span><span class="p">,</span>
+        <span class="p">},</span>
+     <span class="c1"># 原点默认和帧图的中心点一致</span>
+        <span class="s2">&quot;center_point&quot;</span><span class="p">:</span> <span class="n">ORIGIN</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>实现了：</p>
+<ol class="arabic">
+<li><p>coords<em>to</em>point(*coords)；c2p(*coords):将坐标系中的点的坐标值转换为屏幕（帧图）上的点</p>
+<p>分析一下源码：</p>
+</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coords_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">coords</span><span class="p">):</span>
+        <span class="c1"># 将坐标轴中的原点0换算为对应的帧图中的坐标</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">number_to_point</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># 将帧图坐标转换为向量</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span>
+        <span class="c1"># result = 原点对应的帧图的坐标+coord相对帧图中原点的坐标 = coord在帧图中的实际坐标</span>
+        <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">coord</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_axes</span><span class="p">(),</span> <span class="n">coords</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">number_to_point</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span> <span class="o">-</span> <span class="n">origin</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>point<em>to</em>coords(point)；p2c(point)</p></li>
+</ol>
+<p>增加了方法：</p>
+<p>get<em>coordinate</em>labels(x<em>vals=None,
+y</em>vals=None)：传入x,y标签的latex字符串，得到对应的x,y坐标轴的标签的对象</p>
+<p>add<em>coordinates(x</em>vals=None,
+y<em>vals=None):和get</em>coordinate_labels相似，但是将其加入了自己的成员变量并返回了自己</p>
+</div>
+<div class="section" id="threedaxes">
+<h3>3 三维坐标系类 ThreeDAxes<a class="headerlink" href="#threedaxes" title="永久链接至标题">¶</a></h3>
+<p>继承自Axes</p>
+<p><strong>ThreeDAxes(**kwargs)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;dimension&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">5.5</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">5.5</span><span class="p">,</span>
+        <span class="s2">&quot;y_max&quot;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">,</span>
+        <span class="s2">&quot;z_axis_config&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;z_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">3.5</span><span class="p">,</span>
+        <span class="s2">&quot;z_max&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>
+        <span class="s2">&quot;z_normal&quot;</span><span class="p">:</span> <span class="n">DOWN</span><span class="p">,</span>
+        <span class="s2">&quot;num_axis_pieces&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;light_source&quot;</span><span class="p">:</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">DOWN</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">LEFT</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">OUT</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numberplane">
+<h3>4 NumberPlane<a class="headerlink" href="#numberplane" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="complexplane">
+<h3>5 ComplexPlane<a class="headerlink" href="#complexplane" title="永久链接至标题">¶</a></h3>
+<p>复数坐标系，继承于NumberPlane</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># author:TB</span>
+<span class="k">class</span> <span class="nc">ComplexPlaneScene</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># See manimlib/mobject/number_line.py and coordinate_systems.py</span>
+        <span class="n">cp</span> <span class="o">=</span> <span class="n">ComplexPlane</span><span class="p">(</span>
+                        <span class="n">y_axis_config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;decimal_number_config&quot;</span><span class="p">:{</span><span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span><span class="p">}},</span>
+                        <span class="n">number_line_config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_numbers&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">}</span>
+                        <span class="p">)</span>
+
+        <span class="n">x_axis</span> <span class="o">=</span> <span class="n">cp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">y_axis</span> <span class="o">=</span> <span class="n">cp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">x_axis</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">y_axis</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">PURPLE</span><span class="p">)</span>
+
+        <span class="n">x_labels</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">x_labels</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">ORANGE</span><span class="p">)</span>
+
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">y_labels</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">YELLOW</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">y_labels</span><span class="p">:</span>
+            <span class="n">y</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">x_label</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="n">x_label</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">c2p</span><span class="p">(</span><span class="mf">6.8</span><span class="p">,</span><span class="n">x_label</span><span class="o">.</span><span class="n">get_height</span><span class="p">()))</span>
+        <span class="n">y_label</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+        <span class="n">y_label</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">c2p</span><span class="p">(</span><span class="o">-</span><span class="n">y_label</span><span class="o">.</span><span class="n">get_width</span><span class="p">(),</span><span class="mf">3.8</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span><span class="n">x_label</span><span class="p">,</span><span class="n">y_label</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plots_3D.html" class="btn btn-neutral float-right" title="plot_3D" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plots_2D.html" class="btn btn-neutral float-left" title="plot_2D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

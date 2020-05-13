@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CONFIG &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="CheckFormulaByTXT工具类" href="CheckFormulaByTXT工具类.html" />
+    <link rel="prev" title="demo" href="demo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">manim_sandbox</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="demo.html">demo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CONFIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CheckFormulaByTXT工具类.html">CheckFormulaByTXT工具类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScreenGrid工具类.html">ScreenGrid工具类</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">manim_sandbox</a> &raquo;</li>
+        
+      <li>CONFIG</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manim_sandbox/CONFIG.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="config">
+<h1>CONFIG<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">前置知识</p>
+<p>前置知识，CONFIG配置变量参数属性和自定义工具类， 这部分主要是学习的这个比较好的 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt?p=14">视频教程这一节</a>  ，因为真的很细，但是不想每次要用一个个视频去翻，我决定mark下来一些有用的方便平时使用。</p>
+</div>
+<p>这里讲Config设置，config字典变量参数设置  ConfigExample</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ConfigExample1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="n">CONFIG</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text_1&quot;</span><span class="p">:</span><span class="s2">&quot;Text 1&quot;</span><span class="p">,</span><span class="c1">#字典中定义的变量可以被类内所有方法使用</span>
+        <span class="s2">&quot;text_2&quot;</span><span class="p">:</span><span class="s2">&quot;Text 2&quot;</span>
+        <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t1</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text_1</span><span class="p">)</span><span class="c1">#t1是construct方法中定义的，只能在内部使用</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#能运行，等效</span>
+<span class="k">class</span> <span class="nc">ConfigExample2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="n">CONFIG</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;text_1&quot;</span><span class="p">:</span><span class="s2">&quot;Text 1&quot;</span><span class="p">,</span><span class="c1">#字典中定义的变量可以被类内所有方法使用</span>
+        <span class="s2">&quot;text_2&quot;</span><span class="p">:</span><span class="s2">&quot;Text 2&quot;</span>
+        <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">custom_method</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">custom_method</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">t1</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text_1</span><span class="p">)</span><span class="c1">#t1是construct方法中定义的，只能在内部使用</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">class ConfigExample(Scene):</span>
+<span class="sd">    CONFIG={</span>
+<span class="sd">        &quot;text_1&quot;:&quot;Text 1&quot;,#字典中定义的变量可以被类内所有方法使用</span>
+<span class="sd">        &quot;text_2&quot;:&quot;Text 2&quot;</span>
+<span class="sd">        }</span>
+<span class="sd">    def construct(self):</span>
+<span class="sd">        self.custom_method()</span>
+<span class="sd">        self.play(Write(t1))#t1未定义，因为consruct不能使用custom_method()中定义的私有的t1</span>
+
+<span class="sd">    def custom_method(self) :</span>
+<span class="sd">        t1=TextMobject(self.text_1)#t1是construct方法中定义的，只能在内部使用</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#能运行</span>
+<span class="c1">#字典中定义的变量可以被类内所有方法使用</span>
+<span class="c1"># 继承自Scene,查看其config字典有&quot;camera_class&quot;:=Camera,相机类选用的是Camera类</span>
+<span class="c1"># &quot;camera_config&quot; = {}相机类配置默认,而camera 的默认属性config定义在manimlib/camera/camera.py第39行中，查看字典的默认值&quot;background_color&quot;: BLACK背景颜色默认是黑色，我们可以修改为&quot;background_color&quot;: RED</span>
+<span class="c1"># 类似的其他所有属性也是这样设置，或者ctrl点击来查询默认值。3b1b的源码慢慢学习，相信笔记会越来越清晰的。</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ConfigExample3</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="n">CONFIG</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;camera_config&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;background_color&quot;</span><span class="p">:</span> <span class="n">RED</span><span class="p">},</span>
+        <span class="s2">&quot;text_1&quot;</span><span class="p">:</span><span class="s2">&quot;Text 1&quot;</span><span class="p">,</span><span class="c1">#字典中定义的变量可以被类内所有方法使用</span>
+        <span class="s2">&quot;text_2&quot;</span><span class="p">:</span><span class="s2">&quot;Text 2&quot;</span>
+        <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">custom_method</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span><span class="c1">#t1可以用</span>
+
+    <span class="k">def</span> <span class="nf">custom_method</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t1</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text_1</span><span class="p">)</span><span class="c1">#加个self.定义的可以被类内所有方法使用，其实self是指实例化后的类的 实例本身，相当于self.t1属性变量赋值t1</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        和普通数相比，在类中定义函数只有一点不同，就是第一参数永远是类的本身实例变量self，并且调用时，不用传递该参数。</span>
+<span class="sd">        除此之外，类的方法(函数）和普通函数没啥区别，</span>
+<span class="sd">        可以用默认参数、可变参数或者关键字参数（*args是可变参数，args接收的是一个tuple，**kw是关键字参数，kw接收的是一个dict）。</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CheckFormulaByTXT工具类.html" class="btn btn-neutral float-right" title="CheckFormulaByTXT工具类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="demo.html" class="btn btn-neutral float-left" title="demo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

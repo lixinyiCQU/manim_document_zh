@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CheckFormulaByTXT工具类 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="ScreenGrid工具类" href="ScreenGrid工具类.html" />
+    <link rel="prev" title="CONFIG" href="CONFIG.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">manim_sandbox</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="demo.html">demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">CONFIG</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CheckFormulaByTXT工具类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScreenGrid工具类.html">ScreenGrid工具类</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">manim_sandbox</a> &raquo;</li>
+        
+      <li>CheckFormulaByTXT工具类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manim_sandbox/CheckFormulaByTXT工具类.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="checkformulabytxt">
+<h1>CheckFormulaByTXT工具类<a class="headerlink" href="#checkformulabytxt" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">前置知识</p>
+<p>前置知识，CONFIG配置变量参数属性和自定义工具类， 这部分主要是学习的这个比较好的 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">视频教程</a>  ，因为真的很细，但是不想每次要用一个个视频去翻，我决定mark下来一些有用的方便平时使用。</p>
+</div>
+<p>这里讲工具类安装使用，这里用视频中的例子来举例，CheckFormulaByTXT工具类，还是无敌的elteoremadebeethoven写的，仓库链接前面提过很多次了。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">#CheckFormulaByTXT工具类</span>
+<span class="sd">class CheckFormulaByTXT(Scene):</span>
+<span class="sd">    CONFIG={</span>
+<span class="sd">    &quot;camera_config&quot;:{&quot;background_color&quot;: BLACK},</span>
+<span class="sd">    &quot;svg_type&quot;:&quot;text&quot;,</span>
+<span class="sd">    &quot;text&quot;: TexMobject(&quot;&quot;),</span>
+<span class="sd">    &quot;file&quot;:&quot;&quot;,</span>
+<span class="sd">    &quot;svg_scale&quot;:0.9,</span>
+<span class="sd">    &quot;angle&quot;:0,</span>
+<span class="sd">    &quot;flip_svg&quot;:False,</span>
+<span class="sd">    &quot;fill_opacity&quot;: 1,</span>
+<span class="sd">    &quot;remove&quot;: [],</span>
+<span class="sd">    &quot;stroke_color&quot;: WHITE,</span>
+<span class="sd">    &quot;fill_color&quot;: WHITE,</span>
+<span class="sd">    &quot;stroke_width&quot;: 3,</span>
+<span class="sd">    &quot;numbers_scale&quot;:0.5,</span>
+<span class="sd">    &quot;show_numbers&quot;: True,</span>
+<span class="sd">    &quot;animation&quot;: False,</span>
+<span class="sd">    &quot;direction_numbers&quot;: UP,</span>
+<span class="sd">    &quot;color_numbers&quot;: RED,</span>
+<span class="sd">    &quot;space_between_numbers&quot;:0,</span>
+<span class="sd">    &quot;show_elements&quot;:[],</span>
+<span class="sd">    &quot;color_element&quot;:BLUE,</span>
+<span class="sd">    &quot;set_size&quot;:&quot;width&quot;,</span>
+<span class="sd">    &quot;remove_stroke&quot;:[],</span>
+<span class="sd">    &quot;show_stroke&quot;:[],</span>
+<span class="sd">    &quot;warning_color&quot;:RED,</span>
+<span class="sd">    &quot;stroke_&quot;:1</span>
+<span class="sd">    }</span>
+<span class="sd">    def construct(self):</span>
+<span class="sd">        self.imagen=self.text</span>
+<span class="sd">        self.imagen.set_width(FRAME_WIDTH)</span>
+<span class="sd">        if self.imagen.get_height()&gt;FRAME_HEIGHT:</span>
+<span class="sd">            self.imagen.set_height(FRAME_HEIGHT)</span>
+<span class="sd">        self.imagen.scale(self.svg_scale)</span>
+<span class="sd">        if self.flip_svg==True:</span>
+<span class="sd">            self.imagen.flip()</span>
+<span class="sd">        if self.show_numbers==True:</span>
+<span class="sd">            self.print_formula(self.imagen.copy(),</span>
+<span class="sd">                self.numbers_scale,</span>
+<span class="sd">                self.direction_numbers,</span>
+<span class="sd">                self.remove,</span>
+<span class="sd">                self.space_between_numbers,</span>
+<span class="sd">                self.color_numbers)</span>
+
+<span class="sd">        self.return_elements(self.imagen.copy(),self.show_elements)</span>
+<span class="sd">        for st in self.remove_stroke:</span>
+<span class="sd">            self.imagen[st].set_stroke(None,0)</span>
+<span class="sd">        for st in self.show_stroke:</span>
+<span class="sd">            self.imagen[st].set_stroke(None,self.stroke_)</span>
+<span class="sd">        if self.animation==True:</span>
+<span class="sd">            self.play(DrawBorderThenFill(self.imagen))</span>
+<span class="sd">        else:</span>
+<span class="sd">            c=0</span>
+<span class="sd">            for j in range(len(self.imagen)):</span>
+<span class="sd">                permission_print=True</span>
+<span class="sd">                for w in self.remove:</span>
+<span class="sd">                    if j==w:</span>
+<span class="sd">                        permission_print=False</span>
+<span class="sd">                if permission_print:</span>
+<span class="sd">                    self.add(self.imagen[j])</span>
+<span class="sd">            c = c + 1</span>
+<span class="sd">        self.personalize_image()</span>
+<span class="sd">        self.wait()</span>
+
+<span class="sd">    def personalize_image(self):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    def print_formula(self,text,inverse_scale,direction,exception,buff,color):</span>
+<span class="sd">        text.set_color(self.warning_color)</span>
+<span class="sd">        self.add(text)</span>
+<span class="sd">        c = 0</span>
+<span class="sd">        for j in range(len(text)):</span>
+<span class="sd">            permission_print=True</span>
+<span class="sd">            for w in exception:</span>
+<span class="sd">                if j==w:</span>
+<span class="sd">                    permission_print=False</span>
+<span class="sd">            if permission_print:</span>
+<span class="sd">                self.add(text[j].set_color(self.stroke_color))</span>
+<span class="sd">        c = c + 1</span>
+
+<span class="sd">        c=0</span>
+<span class="sd">        for j in range(len(text)):</span>
+<span class="sd">            permission_print=True</span>
+<span class="sd">            element = TexMobject(&quot;%d&quot; %c,color=color)</span>
+<span class="sd">            element.scale(inverse_scale)</span>
+<span class="sd">            element.next_to(text[j],direction,buff=buff)</span>
+<span class="sd">            for w in exception:</span>
+<span class="sd">                if j==w:</span>
+<span class="sd">                    permission_print=False</span>
+<span class="sd">            if permission_print:</span>
+<span class="sd">                self.add_foreground_mobjects(element)</span>
+<span class="sd">            c = c + 1</span>
+
+<span class="sd">    def return_elements(self,formula,adds):</span>
+<span class="sd">        for i in adds:</span>
+<span class="sd">            self.add_foreground_mobjects(formula[i].set_color(self.color_element),</span>
+<span class="sd">                TexMobject(&quot;%d&quot;%i,color=self.color_element,background_stroke_width=0).scale(self.numbers_scale).next_to(formula[i],self.direction_numbers,buff=self.space_between_numbers))</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>manimlib/extensions/extensions_imports.py文件中写入</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.extensions.check_formula_by_txt.check_formula_by_txt</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>然后把CheckFormulaByTXT工具类的py文件+gif文件资料+markdown说明书一起放在manimlib/extensions/x文件夹，这样就能统一管理插件工具类，要什么加什么，如果不常用的工具类，可以在py文件中手动import，那就不需要写入manimlib/extensions/manimlib/extensions_imports.py。</p>
+<p>为什么我想放在一个插件文件夹里面呢？其实是因为随便约定一个统一的管理模式，方便管理的一种建议而已。</p>
+<p>不喜欢的完全可以手动复制喜欢的地方自己手动import,但是如果约定下来文件夹，就可以用我前面 About关于 说的，插件安装.bat 来实现统一管理和自动安装功能省心一点。</p>
+<p>做完这个就能注释掉上述工具类（写代码的时候完全不粘贴进去部分），下面继承自CheckFormulaByTXT的CheckFormula1也能正常用。</p>
+<p>视频中还提到放大看出来图片大括号中间有间隔缝隙，可以改进，方法是：</p>
+<p>在manim\manimlib\mobject\svg\tex_mobject.py中class SingleStringTexMobject(SVGMobject):配置的 “background_stroke_width”: 1,</p>
+<p>this parameter is used to add shadow to objects，改成0即可。</p>
+<p>使用工具类的代码如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CheckFormula1</span><span class="p">(</span><span class="n">CheckFormulaByTXT</span><span class="p">):</span>
+    <span class="n">CONFIG</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">sqrt{&quot;</span><span class="p">,</span> <span class="c1">#0,1双斜杠占用两个，分别可以赋值不同颜色</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">int_{&quot;</span><span class="p">,</span>   <span class="c1">#2</span>
+            <span class="s2">&quot;a}^&quot;</span><span class="p">,</span>  <span class="c1">#3</span>
+            <span class="s2">&quot;</span><span class="si">{b}</span><span class="s2">&quot;</span><span class="p">,</span>   <span class="c1">#4</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">left(&quot;</span><span class="p">,</span> <span class="c1">#5</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1">#6</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">right)&quot;</span><span class="p">,</span>  <span class="c1">#7</span>
+            <span class="s2">&quot;dx</span><span class="se">\\</span><span class="s2">tiny .}&quot;</span>  <span class="c1">#8</span>
+            <span class="p">),</span>
+    <span class="s2">&quot;show_elements&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="c1">#详细参数属性设置可以看定义文件。</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/CheckFormula1.png"><img alt="../_images/CheckFormula1.png" src="../_images/CheckFormula1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">CheckFormula1</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+</div>
+<p>这里是在写公式数组，笔记来源是 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt?p=10">这一节视频</a>  。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FormulaColor3</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">sqrt{&quot;</span><span class="p">,</span> <span class="c1">#0,1双斜杠占用两个，分别可以赋值不同颜色</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">int_{&quot;</span><span class="p">,</span>   <span class="c1">#2</span>
+            <span class="s2">&quot;a}^&quot;</span><span class="p">,</span>  <span class="c1">#3</span>
+            <span class="s2">&quot;</span><span class="si">{b}</span><span class="s2">&quot;</span><span class="p">,</span>   <span class="c1">#4</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">left(&quot;</span><span class="p">,</span> <span class="c1">#5</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1">#6</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">right)&quot;</span><span class="p">,</span>  <span class="c1">#7</span>
+            <span class="s2">&quot;dx</span><span class="se">\\</span><span class="s2">tiny .}&quot;</span>  <span class="c1">#8#写&quot;dx}&quot;只会显示而不是dx，#&quot;\\tiny .}&quot;</span>
+            <span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">GREEN</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">YELLOW</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">PINK</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">ORANGE</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">PURPLE</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">MAROON</span><span class="p">)</span>
+        <span class="c1">#text.set_color_by_tex(&quot;y&quot;,ORANGE)#建议仅仅在texts中用好了，formula中可能会报错。</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">python -m manim a.py FormulaColor3 -ps #我把上述两个代码块写在同一个文件中，我试了试，也会执行CheckFormula1，写两次文字text的svg文件到磁盘中，如果CONFIG中定义的不一样，用的是第二次定义的文本结果。其实我想知道为什么。</span>
+<span class="sd">https://docs.python.org/3/tutorial/</span>
+<span class="sd">https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/FormulaColor3.png"><img alt="../_images/FormulaColor3.png" src="../_images/FormulaColor3.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">FormulaColor3</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ScreenGrid工具类.html" class="btn btn-neutral float-right" title="ScreenGrid工具类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CONFIG.html" class="btn btn-neutral float-left" title="CONFIG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

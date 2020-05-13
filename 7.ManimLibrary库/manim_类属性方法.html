@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>manim类属性方法 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="ManimLibrary库" href="ManimLibrary库.html" />
+    <link rel="prev" title="Manim packages库包" href="manim_packages包.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ManimLibrary库</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manim_packages包.html">Manim packages库包</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">manim类属性方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ManimLibrary库.html">ManimLibrary库</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ManimLibrary库</a> &raquo;</li>
+        
+      <li>manim类属性方法</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/7.ManimLibrary库/manim_类属性方法.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manim">
+<h1>manim类属性方法<a class="headerlink" href="#manim" title="永久链接至标题">¶</a></h1>
+<p id="manimlibclassespropertiesmethods">Index of package manimlib</p>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这页我用PyDoc生成的结果 ：manim类属性方法。用的是PyDoc，对应的是manimlib的类属性和方法。浏览器回退上一页快捷键是alt+左键，因为PyDoc需要开服务器，我设置点进去的页面链接取消使用，然后搜索功能能用。这也是我手撸的索引页面，排版丑陋，差不多这样吧。</p>
+</div>
+<div class="line-block">
+<div class="line">│</div>
+<div class="line">│ <a class="reference external" href="../_static/html/manimlib.constants.html">manimlib.constants.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/manimlib.demo.html">manimlib.demo.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/manimlib.example_scenes.html">manimlib.example_scenes.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/manimlib.extract_scene.html">manimlib.extract_scene.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/manimlib.imports.html">manimlib.imports.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/manimlib.stage_scenes.html">manimlib.stage_scenes.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/manimlib.config.html">manimlib.config.html</a></div>
+<div class="line">│</div>
+<div class="line">├─animation</div>
+<div class="line">│
+<a class="reference external" href="../_static/html/animation_animation.html">animation_animation.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/animation_composition.html">animation_composition.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_creation.html">animation_creation.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_fading.html">animation_fading.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_growing.html">animation_growing.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/animation_indication.html">animation_indication.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_movement.html">animation_movement.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_numbers.html">animation_numbers.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_rotation.html">animation_rotation.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/animation_specialized.html">animation_specialized.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/animation_transform.html">animation_transform.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/animation_update.html">animation_update.html</a></div>
+<div class="line">│</div>
+<div class="line">├─camera</div>
+<div class="line">│ <a class="reference external" href="../_static/html/camera_camera.html">camera_camera.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/camera_mapping_camera.html">cameramappingcamera.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/camera_moving_camera.html">cameramovingcamera.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/camera_multi_camera.html">cameramulticamera.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/camera_three_d_camera.html">camerathreed_camera.html</a></div>
+<div class="line">│</div>
+<div class="line">├─container</div>
+<div class="line">│ │</div>
+<div class="line">│
+<a class="reference external" href="../_static/html/container_container.html">container_container.html</a></div>
+<div class="line">│</div>
+<div class="line">├─mobject</div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_changing.html">mobject_changing.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_frame.html">mobject_frame.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_functions.html">mobject_functions.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_geometry.html">mobject_geometry.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_matrix.html">mobject_matrix.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_mobject.html">mobject_mobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_mobject_update_utils.html">mobjectmobjectupdate_utils.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_numbers.html">mobject_numbers.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_number_line.html">mobjectnumberline.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_probability.html">mobject_probability.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_shape_matchers.html">mobjectshapematchers.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/mobject_svg_brace.html">mobjectsvgbrace.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_svg_drawings.html">mobjectsvgdrawings.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_svg_text_mobject.html">mobjectsvgtext_mobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_svg_tex_mobject.html">mobjectsvgtex_mobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_three_dimensions.html">mobjectthreedimensions.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_three_d_shading_utils.html">mobjectthreedshadingutils.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_three_d_utils.html">mobjectthreed_utils.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_types_image_mobject.html">mobjecttypesimage_mobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_types_point_cloud_mobject.html">mobjecttypespointcloudmobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_types_vectorized_mobject.html">mobjecttypesvectorized_mobject.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_value_tracker.html">mobjectvaluetracker.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/mobject_vector_field.html">mobjectvectorfield.html</a></div>
+<div class="line">│</div>
+<div class="line">├─once<em>useful</em>constructs</div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_arithmetic.html">onceusefulconstructs_arithmetic.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_combinatorics.html">onceusefulconstructs_combinatorics.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_complex_transformation_scene.html">onceusefulconstructscomplextransformation_scene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_counting.html">onceusefulconstructs_counting.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_fractals.html">onceusefulconstructs_fractals.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_graph_theory.html">onceusefulconstructsgraphtheory.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_light.html">onceusefulconstructs_light.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_matrix_multiplication.html">onceusefulconstructsmatrixmultiplication.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/once_useful_constructs_region.html">onceusefulconstructs_region.html</a></div>
+<div class="line">│</div>
+<div class="line">├─scene</div>
+<div class="line">│ <a class="reference external" href="../_static/html/scene_scene_from_video.html">scene_
+scenefromvideo.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/scene_graph_scene.html">scenegraphscene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_moving_camera_scene.html">scenemovingcamera_scene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_reconfigurable_scene.html">scenereconfigurablescene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_sample_space_scene.html">scenesamplespace_scene.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/scene_scene.html">scene_scene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_scene_file_writer.html">scenescenefile_writer.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_three_d_scene.html">scenethreed_scene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_vector_space_scene.html">scenevectorspace_scene.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/scene_zoomed_scene.html">scenezoomedscene.html</a></div>
+<div class="line">│</div>
+<div class="line">└─utils</div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_bezier.html">utils_bezier.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_color.html">utils_color.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_config_ops.html">utilsconfigops.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_debug.html">utils_debug.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_file_ops.html">utilsfileops.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_images.html">utils_images.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_iterables.html">utils_iterables.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_paths.html">utils_paths.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/utils_rate_functions.html">utilsratefunctions.html</a></div>
+<div class="line">│
+<a class="reference external" href="../_static/html/utils_simple_functions.html">utilssimplefunctions.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_sounds.html">utils_sounds.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_space_ops.html">utilsspaceops.html</a></div>
+<div class="line">│ <a class="reference external" href="../_static/html/utils_strings.html">utils_strings.html</a></div>
+<div class="line">└─<a class="reference external" href="../_static/html/utils_tex_file_writing.html">utilstexfile_writing.html</a></div>
+</div>
+<p>授之以渔:</p>
+<ol class="arabic simple">
+<li><p>首先，manim所在位置添加到PYTHONPATH,在打开PyDoc的时候被检测到。</p></li>
+</ol>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/PythonPath.JPG"><img alt="../_images/PythonPath.JPG" src="../_images/PythonPath.JPG" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">PYTHONPATH设置</span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>然后，打开命令行输入：</p></li>
+</ol>
+<blockquote>
+<div><p><strong>python -m pydoc -p 8080</strong></p>
+</div></blockquote>
+<p>给大家解释一下命令含义：
+python -m pydoc表示打开pydoc模块，这个模块就是用来查看python文档的工具</p>
+<p>-p 1234表示在端口号8080上打开server，这个端口号可以自行设置</p>
+<p>然后就可以在浏览器中打开链接“ <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a>”看到如图所示的内容，还能动态查看依赖关系以及的用法等等，自己探索吧，这页面链接的manim类库应该是最新的。</p>
+<p>然后如果添加manimlib//animation到PYTHONPATH，依旧报错不能读取manimlib(package)。我的解决办法是粘贴一个出来manim.py所在目录，然后点进去就可以看，属性方法继承关系等等。</p>
+<p>其实是因为最开始我打算文档分类是打算根据manimlib的分类（animation、camera、container、mobject、scene、utils）进行的，但是索引查询+搜索查询才是好用的文档，manimlib也是类似地根据功能集群进行分类，所以为了方便查询，我最后根据图像、字体公式、坐标这些来分类记录。</p>
+<p>既然已经有这页几乎囊括所有的类属性方法，PyDoc体验还很好，为什么后面几个章节elteoremadebeethoven起草的标题为“XXX类的属性和方法”我还是拿过来呢？</p>
+<p>其实是因为elteoremadebeethoven选定了一些常用的类来讲解&#64;manimlib的类库，然后后面马上给个py例子+mp4效果 ，我感觉这样的体验和后续的笔记保存都要好些。（-_-#</p>
+<p>但是太多，似乎elteoremadebeethoven都感觉太无聊肝不下去导致TODO一年都没动静（不过基本每个人都有自己要忙的事情）。粘贴过来的目的是因为，我的想法是，万一以后闲着没事儿补点，万一我学习源码可以在这里直接做笔记Mark下来，或者有什么大神整下去呢？</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ManimLibrary库.html" class="btn btn-neutral float-right" title="ManimLibrary库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manim_packages包.html" class="btn btn-neutral float-left" title="Manim packages库包" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

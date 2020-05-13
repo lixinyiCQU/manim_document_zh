@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Animations类的属性和方法 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Indication" href="indication.html" />
+    <link rel="prev" title="ManimLibrary库" href="../7.ManimLibrary库/ManimLibrary库.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Animations类的属性和方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indication.html">Indication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html">Movement and Rotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rate-functions">Rate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submobject-modes">Submobject modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Animations类的属性和方法</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/7.1Animations类的属性和方法/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="animations">
+<h1>Animations类的属性和方法<a class="headerlink" href="#animations" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这一页是elteoremadebeethoven写的 <a class="reference external" href="https://elteoremadebeethoven.github.io/manim_3feb_docs.github.io/html/tree/animation.html">manim_3feb_docs</a>  我翻译+做笔记，把资料整合编辑成方便的文档格式，以方便查阅使用Manim。</p>
+</div>
+<p>详情可以看这里PyDoc生成的结果 <a class="reference internal" href="../7.ManimLibrary库/manim_类属性方法.html#manimlibclassespropertiesmethods"><span class="std std-ref">manim类属性方法</span></a>  。</p>
+<dl class="class">
+<dt id="manimlib.animation.animation.Animation">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.animation.</code><code class="sig-name descname">Animation</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.animation.Animation" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="indication.html">Indication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#focus-on">Focus On</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#indicate">Indicate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#flash">Flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#circle-indicate">Circle Indicate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-passing-flash">Show Passing Flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-creation-then-destruction">Show Creation Then Destruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-creation-then-fade-out">Show Creation Then Fade Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#animation-on-surrounding-rectangle">Animation On Surrounding Rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-passing-flash-around">Show Passing Flash Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-creation-then-destruction-around">Show Creation Then Destruction Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#show-creation-then-fade-around">Show Creation Then Fade Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#apply-wave">Apply Wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#wiggle-out-thenin">Wiggle Out ThenIn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html#turn-inside-out">Turn Inside Out</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="movement.html">Movement and Rotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#homotopy">Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#complex-homotopy">Complex Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#phase-flow">Phase Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#move-along-path">Move Along Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#rotating">Rotating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html#rotate">Rotate</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="rate-functions">
+<h2>Rate functions<a class="headerlink" href="#rate-functions" title="永久链接至标题">¶</a></h2>
+<p>See</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manimlib</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">rate_functions</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+
+<span class="k">def</span> <span class="nf">smooth</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="o">-</span><span class="n">inflection</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">inflection</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">-</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">error</span><span class="p">),</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">rush_into</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">rush_from</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">slow_into</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">double_smooth</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="n">new_t</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">new_t</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">there_and_back_with_pause</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pause_ratio</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">pause_ratio</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">running_start</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pull_factor</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">bezier</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">not_quite_there</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span> <span class="n">proportion</span><span class="o">=</span><span class="mf">0.7</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">proportion</span> <span class="o">*</span> <span class="n">func</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">wiggle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">wiggles</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">wiggles</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">squish_rate_func</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.6</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">a</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">((</span><span class="n">t</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="submobject-modes">
+<h2>Submobject modes<a class="headerlink" href="#submobject-modes" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;lagged_start&quot;</span>
+<span class="s2">&quot;smoothed_lagged_start&quot;</span>
+<span class="s2">&quot;one_at_a_time&quot;</span>
+<span class="s2">&quot;all_at_once&quot;</span>
+</pre></div>
+</div>
+<p>See <code class="docutils literal notranslate"><span class="pre">get_sub_alpha</span></code> from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manimlib</span><span class="o">/</span><span class="n">animation</span><span class="o">/</span><span class="n">animation</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="c1"># updating of self.mobject.  Besides, in</span>
+        <span class="c1"># most cases its updating is suspended anyway</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mobject</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_all_mobjects</span><span class="p">()</span>
+        <span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">digest_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="tree">
+<h2>Tree<a class="headerlink" href="#tree" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── AnimationGroup
+│   ├── AnimationOnSurroundingRectangle
+│   │   ├── ShowCreationThenDestructionAround
+│   │   ├── ShowCreationThenFadeAround
+│   │   └── ShowPassingFlashAround
+│   └── Flash
+├── ApplyToCenters
+├── ChangingDecimal
+│   └── ChangeDecimalToValue
+├── DrawBorderThenFill
+│   └── Write
+├── EmptyAnimation
+├── Homotopy
+│   ├── ApplyWave
+│   ├── ComplexHomotopy
+│   └── SmoothedVectorizedHomotopy
+├── LaggedStart
+├── MaintainPositionRelativeTo
+├── MoveAlongPath
+├── PhaseFlow
+├── Rotating
+├── ShowIncreasingSubsets
+├── ShowPartial
+│   ├── ShowCreation
+│   │   └── Uncreate
+│   └── ShowPassingFlash
+│       └── ShowCreationThenDestruction
+├── Succession
+│   └── ShowCreationThenFadeOut
+├── Transform
+│   ├── FadeIn
+│   ├── FadeInAndShiftFromDirection
+│   │   └── FadeInFromDown
+│   ├── FadeInFromLarge
+│   ├── FadeOut
+│   │   └── FadeOutAndShift
+│   │       └── FadeOutAndShiftDown
+│   ├── FocusOn
+│   ├── GrowFromPoint
+│   │   ├── GrowArrow
+│   │   ├── GrowFromCenter
+│   │   │   └── SpinInFromNothing
+│   │   └── GrowFromEdge
+│   ├── Indicate
+│   │   └── CircleIndicate
+│   ├── Rotate
+│   ├── ShrinkToCenter
+│   └── TurnInsideOut
+├── UpdateFromAlphaFunc
+├── UpdateFromFunc
+├── VFadeIn
+├── Vibrate
+└── WiggleOutThenIn
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="indication.html" class="btn btn-neutral float-right" title="Indication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../7.ManimLibrary库/ManimLibrary库.html" class="btn btn-neutral float-left" title="ManimLibrary库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

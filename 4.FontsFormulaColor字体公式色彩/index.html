@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FontsFormulaColor字体公式色彩 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="TextMobject文本类" href="TextMobject文本类.html" />
+    <link rel="prev" title="Images图片及变换" href="../3.ShapesAnimation图形动画/Images图片及变换.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FontsFormulaColor字体公式色彩</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TextMobject文本类.html">TextMobject文本类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX文本类TexMobject.html">LaTeX文本类TexMobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text数组.html">text数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_like_arrays.html">text_like_arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chinese等.html">Chinese中文等</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Notation公式符号.html">Notation公式符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX特殊包.html">LaTeX特殊包</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>FontsFormulaColor字体公式色彩</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/4.FontsFormulaColor字体公式色彩/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fontsformulacolor">
+<h1>FontsFormulaColor字体公式色彩<a class="headerlink" href="#fontsformulacolor" title="永久链接至标题">¶</a></h1>
+<p>manim会把LaTeX文字变成svg然后输出在屏幕上，所以就是一般的LaTeX笔记就行。</p>
+<p>text数组,在 <a class="reference internal" href="../3.ShapesAnimation图形动画/animation显示操作.html#displayoperation"><span class="std std-ref">animation显示操作</span></a>  中所有的显示方法几乎都可以对text数组成立。</p>
+<p>TextMobject文本类:传入一个字符串，或者多个字符串的字符串数组，按照下表索引数组的值</p>
+<p>LaTeX文本类TexMobject::显示为LaTeX格式(在想要LaTeX字符串按照数组显示时必须使用这个实现)</p>
+<p>Notation符号:为了数学编辑方便复制粘贴，拉丁符号，包括常用的数学LaTeX公式等等。数学公式其实就是Latex公式，手册必备。Latex无所不能，还能用来写五线谱等等，只有想不到没有做不到的排版系统。</p>
+<p><a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">视频教程</a>  讲解到2_formula_format时有这两个例子说明
+简单实用方法。</p>
+<p>这是TexMobject中斜杠的使用对比：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Formula</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">formula_tex_1</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\ frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)=\lim_{h\ rightarrow 0}{\ frac{f(x+h)-f(x)}</span><span class="si">{h}</span><span class="s2">}&quot;</span><span class="p">)</span>
+        <span class="n">formula_tex_2</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2"> frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)=\lim_{h</span><span class="se">\\</span><span class="s2"> rightarrow 0}{\ frac{f(x+h)-f(x)}</span><span class="si">{h}</span><span class="s2">}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">formula_tex_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">manim</span> <span class="n">a</span><span class="o">.</span><span class="n">py</span> <span class="n">Formula</span> <span class="o">-</span><span class="n">ps</span> <span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c1">#伸缩，2倍</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/Formula.png"><img alt="../_images/Formula.png" src="../_images/Formula.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Formula</span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</div>
+<p>这是多行矩阵写法。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DescompositionFormula</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">formula_tex</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        \begin</span><span class="si">{bmatrix}</span><span class="s2"> a &amp; a \\ a &amp; a \\ a &amp; a \end</span><span class="si">{bmatrix}</span><span class="s2"></span>
+<span class="s2">        &quot;&quot;&quot;</span>        <span class="p">)</span>
+        <span class="n">formula_tex</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">formula_tex</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/DescompositionFormula.png"><img alt="../_images/DescompositionFormula.png" src="../_images/DescompositionFormula.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">DescompositionFormula</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+</div>
+<p>视频里面第一个在线编辑LaTeX的网站点不开，在线编辑LaTeX的链接：<a class="reference external" href="https://latexeditor.lagrida.com/">https://latexeditor.lagrida.com/</a></p>
+<p><a class="reference external" href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn</a></p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TextMobject文本类.html">TextMobject文本类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX文本类TexMobject.html">LaTeX文本类TexMobject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text数组.html">text数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_like_arrays.html">text_like_arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chinese等.html">Chinese中文等</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notation公式符号.html">Notation公式符号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX特殊包.html">LaTeX特殊包</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TextMobject文本类.html" class="btn btn-neutral float-right" title="TextMobject文本类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../3.ShapesAnimation图形动画/Images图片及变换.html" class="btn btn-neutral float-left" title="Images图片及变换" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

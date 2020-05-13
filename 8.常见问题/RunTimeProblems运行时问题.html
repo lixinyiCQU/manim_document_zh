@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RunTimeProblems运行时问题 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Problems其他问题" href="Others其他问题.html" />
+    <link rel="prev" title="InstallationProblems安装问题" href="InstallationProblems安装问题.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">常见问题</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="InstallationProblems安装问题.html">InstallationProblems安装问题</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RunTimeProblems运行时问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Others其他问题.html">Problems其他问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Notes注意.html">Notice注意</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">常见问题</a> &raquo;</li>
+        
+      <li>RunTimeProblems运行时问题</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/8.常见问题/RunTimeProblems运行时问题.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="runtimeproblems">
+<h1>RunTimeProblems运行时问题<a class="headerlink" href="#runtimeproblems" title="永久链接至标题">¶</a></h1>
+<ol class="arabic simple" id="runtimeproblem">
+<li><p><strong>import</strong> 问题</p></li>
+</ol>
+<p><strong>Q</strong> 1:没有模块 big_ol_pile_of_ manim_imports</p>
+<blockquote>
+<div><p>将文件中的</p>
+<p>from big_ol_pile_of_manim_imports import *</p>
+<p>改成</p>
+<p>from manimlib.imports import *</p>
+</div></blockquote>
+<p><strong>Q</strong> 1. <strong>LATEX</strong> 问题</p>
+<p>Q1:报错 Latex error converting to dvi</p>
+<blockquote>
+<div><p>先不要管错误在哪，先把manimlib/constants.py中的<strong>TEX</strong>_<strong>USE</strong>_<strong>CTEX</strong>改成True再运行</p>
+</div></blockquote>
+<p><strong>Q</strong> 2:报错 xelatex error converting to xdv</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">若为 Windows 系统，先把 manimlib/constants.py 的第 29 行</div>
+<div class="line"><strong>MEDIA_DIR</strong> = “./<strong>media</strong>”</div>
+</div>
+<p>改成</p>
+<p>MEDIA_DIR = os.path.join(os.getcwd()， “media”)</p>
+<p>再进行尝试</p>
+<p>I.若安装的<strong>[TeX]{.smallcaps}</strong>发行版为MiKTEX</p>
+<ol class="arabic simple">
+<li><p><strong>MiKTEX</strong>的有关路径是否添加到环境变量中</p></li>
+<li><p>是否有包没有装全</p></li>
+</ol>
+<div class="line-block">
+<div class="line">对于<strong>2.</strong>，可以正常运行一遍<strong>WriteStuff</strong>场景，看是否又框弹出提示<strong>install</strong>什么东西，如</div>
+<div class="line">果有，则<strong>install</strong>，并重复运行安装运行安装…直到不报错为止。或者使用<strong>tex</strong>编辑器</div>
+<div class="line">(<strong>TEXStudio</strong>)并使用<strong>xelatex</strong>手动编译<strong>media/Tex</strong>文件夹中的<strong>.tex</strong>文件，查看是否有包</div>
+<div class="line">没有安装</div>
+</div>
+<p>II.若安装的TEX发行版为TXLive</p>
+<ol class="arabic simple">
+<li><p><strong>TXLive</strong>有关路径是否添加到环境变量中</p></li>
+<li><p>安装的是否为<strong>full</strong>版本</p></li>
+</ol>
+<p><strong>Ill.</strong>若安装的LaTeX发行版不为以上两款</p>
+<blockquote>
+<div><p>建议换成<strong>TXLive-full</strong>版或者<strong>MiKTX</strong>,并且在重新安装前请删除旧版</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Q3:</strong>报错在文件夹内找不到<strong>svg</strong>文件</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">清空<strong>media/Tex</strong>文件夹内全部内容，再次运行带文字的场景，查看<strong>Tex</strong>文件夹中的内容</div>
+<div class="line"><strong>I.</strong>若仅有<strong>tex</strong>文件和<strong>log</strong>文件，按照<a class="reference external" href="#bookmark19">2.2</a>中方法处理</div>
+<div class="line"><strong>II.</strong>若含有<strong>xdv</strong>文件但没有<strong>svg</strong>文件</div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p>divsvgm是否添加到环境变量，可以使用dvisvgm</p>
+<blockquote>
+<div><p>–version观察是否由报错来检查</p>
+</div></blockquote>
+</li>
+<li><p>dvisvgm版本是否过低，若dvisvgm</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">–verison的输出版本号为1开头，请更换新版dvisvgm`[^4] &lt;#bookmark3&gt;`__</div>
+<div class="line">并注意将含有dvisvgm的文件夹添加到环境变量中</div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>2.3中文显示问题</p>
+<p><strong>Q</strong> 1:含有中文的 TextMobject 编译报错 Latex error converting to dvi</p>
+<blockquote>
+<div><p>将 manimlib/constants.py 中的 TEX_USE_CTEX 改成 True 再尝试</p>
+</div></blockquote>
+<p><strong>Q2:</strong>英文可以正常显示，中文不报错，但不显示</p>
+<blockquote>
+<div><p>考虑使用的是否为TextMobject而不是TexMobject</p>
+</div></blockquote>
+<p>2.4文字问题</p>
+<p><strong>Q</strong> 1: TextMobject 和 TexMobject 有什么区别</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">TextMobject 和 TexMobject 使用的都是 LTEX 语法</div>
+<div class="line">其中TextMobject文字模式相当于直接在LTEX环境下书写</div>
+</div>
+<div class="line-block">
+<div class="line">TexMobject公式模式使用的是LTEX的\begin{align*}环境或者可以看成加了</div>
+<div class="line">$$的环境 使用TextMobject与TexMobject书写公式时</div>
+</div>
+<p>TextMobject(“文字$公式$”)令今 TexMobject(“\text{文字}公式■’）</p>
+</div></blockquote>
+<p><strong>Q</strong> 2: TextMobject中怎么改字体</p>
+<blockquote>
+<div><p><strong>TextMobject</strong>中只能使用<strong>LTEX</strong>的内置字体族和字体形状，包括：</p>
+<p>•罗马字体 \textrm{textrm}</p>
+<p>•无衬线字体 \textsf{textsf}</p>
+<p>•打字机字体 \texttt{texttt}</p>
+<p>•直立形状 \textup{textup}</p>
+<p>•意大利形状\textit〇eo:^}</p>
+<p>•倾斜形状 \textsl{texts1}</p>
+<p>•小型大写 \textsc{<strong>TEXTSC</strong>}</p>
+</div></blockquote>
+<p><strong>Q3:</strong>想自定义字体怎么办</p>
+<div class="line-block">
+<div class="line">使用新版<strong>manim</strong>特有的<strong>Text</strong>〇类，方法如下<strong>Text(“</strong>文字<strong>”</strong>，<strong>font=”</strong>字体”），其中字体要填</div>
+<div class="line">写在计算机内存储的格式<a class="reference external" href="#bookmark24">[^5]</a>,但是不能使用<strong>LTX</strong>语法书写公式</div>
+</div>
+<p><strong>Q4:</strong>想用自定义字体写公式怎么办</p>
+<p>可以使用群文件里<strong>cigar</strong>666编写的<strong>MyText</strong>()类</p>
+<blockquote>
+<div><p>Cigar牛逼</p>
+</div></blockquote>
+<p>Q5: TexMobject中换行是什么</p>
+<div class="line-block">
+<div class="line">四个右划线<strong>\\</strong>，<strong>Python</strong>转义右划线，所以涉及到<strong>\</strong>的均要写成两个<strong>\</strong>，而换行在<strong>LTX</strong>中</div>
+<div class="line">是两个右划线，所以要写成四个。</div>
+</div>
+<p><strong>Q6:</strong>公式怎么对齐</p>
+<blockquote>
+<div><p>I.直接在TexMobject中使用&amp;对齐</p>
+<div class="line-block">
+<div class="line">II. 两个 mobject 对齐，使用</div>
+<div class="line">&gt; obj2.next_to(obj1，DOWN，aligned_edge=LEFT)使 obj2 在 objl</div>
+</div>
+<p>下方，并且左对齐</p>
+<div class="line-block">
+<div class="line">III. VGroup 内对齐，使用 group.arrange(DOWN，aligned_edge=LEFT)使</div>
+<div class="line">VGroup 中的子兀素依次向下排开，并左对齐</div>
+</div>
+<p>写公式的示例：</p>
+<p><a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim/blob/master/English/3_text_like_arrays/scenes.md">https://github.com/Elteoremadebeethoven/AnimationsWithManim/blob/master/English/</a></p>
+<p><a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim/blob/master/English/3_text_like_arrays/scenes.md">3_text_like_arrays/scenes.md</a></p>
+</div></blockquote>
+<p><strong>Q</strong> 7: TexMobject上色问题的处理办法</p>
+<blockquote>
+<div><p>I.将上色的字符分开，使用text[i].set_color(color)来上色</p>
+<p>II.
+将上色的字符分开，使用text.set_color_by_tex_to_color_map(t2c)传入t2c字典来对相</p>
+<p>同的字符串上色</p>
+<p>III.
+只传入一个字符串，但同时传入<strong>tex_to_color_map=t2c</strong>来自动拆分上色（容易出问题）</p>
+<p>IV.
+只传入一个字符串，使用<strong>text[0][i]</strong>来对细小的路径上色（一般是一个字符一个下标）</p>
+</div></blockquote>
+<p><strong>Q</strong> 8: TexMobject的下标怎么分析</p>
+<blockquote>
+<div><p>创建函数</p>
+<p>def debugTeX(self, texm):</p>
+<p>for i, j in zip(range(100), texm):</p>
+<blockquote>
+<div><p>tex_id = TextMobject(str(i)).scale(0.3).set_color(PURPLE)</p>
+<p>tex_id.move_to(j)</p>
+<p>self.add(tex_id)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">在使用时先self.add(tex)然后再debugTeX(self,</div>
+<div class="line">tex),导出最后一帧</div>
+</div>
+<p>观察每段字符上的标号，即为下标{.underline}</p>
+</div></blockquote>
+<p><strong>Q</strong> 9: TexMobject使用\frac拆分时出错</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">这个是<strong>Grant</strong>写<strong>tex_file_writing.py</strong>的一个<strong>bug</strong>,建议使用{分子\<strong>over</strong>分母}来代替</div>
+<div class="line">\<strong>frac</strong>{分子}{分母}</div>
+</div>
+</div></blockquote>
+<p>2.5素材引用问题</p>
+<p><strong>Q</strong> 1:使用SVGMobject找不到svg文件</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>I</strong>.直接使用绝对路径引用<strong>svg</strong>文件</div>
+<div class="line"><strong>II</strong>.将<strong>svg</strong>文件放到<strong>assets/svg_images/</strong>文件夹中</div>
+</div>
+</div></blockquote>
+<p><strong>Q</strong> 2:如何使用jpg或者png文件</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>I</strong>.直接使用绝对路径引用，并使用ImageMobject <strong>II</strong>.将
+<strong>jpg/png</strong></div>
+<div class="line">文件放到 assets/raster_images/ 文件夹中</div>
+</div>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Others其他问题.html" class="btn btn-neutral float-right" title="Problems其他问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="InstallationProblems安装问题.html" class="btn btn-neutral float-left" title="InstallationProblems安装问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

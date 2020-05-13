@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>visual_tools &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2D graphics二维图形类" href="2D graphics二维图形类.html" />
+    <link rel="prev" title="transform" href="transform.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ShapesAnimation图形动画</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation显示操作.html">animation显示操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">visual_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2D graphics二维图形类.html">2D graphics二维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VGroup群组类.html">VGroup群组类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ShapesAnimation图形动画</a> &raquo;</li>
+        
+      <li>visual_tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/3.ShapesAnimation图形动画/visual_tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visual-tools">
+<h1>visual_tools<a class="headerlink" href="#visual-tools" title="永久链接至标题">¶</a></h1>
+<p>Elteoremadebeethoven’s code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveBraces</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)g(x)=&quot;</span><span class="p">,</span>       <span class="c1">#0</span>
+            <span class="s2">&quot;f(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">g(x)&quot;</span><span class="p">,</span>        <span class="c1">#1</span>
+            <span class="s2">&quot;+&quot;</span><span class="p">,</span>                            <span class="c1">#2</span>
+            <span class="s2">&quot;g(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)&quot;</span>         <span class="c1">#3</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="n">brace1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
+        <span class="n">brace2</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">brace1</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;$g&#39;f$&quot;</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">brace2</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;$f&#39;g$&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">brace1</span><span class="p">),</span>
+            <span class="n">FadeIn</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">brace1</span><span class="p">,</span><span class="n">brace2</span><span class="p">),</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/MoveBraces.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveBracesCopy</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)g(x)=&quot;</span><span class="p">,</span><span class="s2">&quot;f(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">g(x)&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;g(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="n">brace1</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
+        <span class="n">brace2</span> <span class="o">=</span> <span class="n">Brace</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">brace1</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;$g&#39;f$&quot;</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">brace2</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;$f&#39;g$&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">brace1</span><span class="p">),</span>
+            <span class="n">FadeIn</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">brace1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">brace2</span><span class="p">),</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">t2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/MoveBracesCopy.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveFrameBox</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)g(x)=&quot;</span><span class="p">,</span><span class="s2">&quot;f(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">g(x)&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;g(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="n">framebox1</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">framebox2</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">framebox1</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">framebox1</span><span class="p">,</span><span class="n">framebox2</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/MoveFrameBox.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveFrameBoxCopy</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)g(x)=&quot;</span><span class="p">,</span><span class="s2">&quot;f(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">g(x)&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;g(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="n">framebox1</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">framebox2</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">framebox1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">framebox1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">framebox2</span><span class="p">),</span>
+            <span class="n">path_arc</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/MoveFrameBoxCopy.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveFrameBoxCopy2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)g(x)=&quot;</span><span class="p">,</span><span class="s2">&quot;f(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">g(x)&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;g(x)</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{d}{dx}</span><span class="s2">f(x)&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="n">framebox1</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">framebox2</span> <span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;g&#39;f&quot;</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;f&#39;g&quot;</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">framebox1</span><span class="p">,</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">t2</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">framebox2</span><span class="p">,</span> <span class="n">UP</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">framebox1</span><span class="p">),</span>
+            <span class="n">FadeIn</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">framebox1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">framebox2</span><span class="p">),</span>
+            <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">t2</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/MoveFrameBoxCopy2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Arrow1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+            <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+            <span class="n">arrow</span> <span class="o">=</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">LEFT</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">)</span>
+            <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">arrow</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">step1</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">step2</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">arrow</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/Arrow1.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Arrow2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+            <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+            <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">step2</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">RIGHT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+            <span class="n">arrow1</span> <span class="o">=</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_left</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">arrow1</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+            <span class="n">arrow2</span> <span class="o">=</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_top</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_bottom</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">arrow2</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">arrow1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">arrow2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/Arrow2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineAnimation</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+        <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+        <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">step2</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">RIGHT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">arrow1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_left</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">arrow1</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">arrow2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_top</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_bottom</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">arrow2</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">arrow1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">arrow2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/LineAnimation.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DashedLineAnimation</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+        <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+        <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">step2</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">RIGHT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">arrow1</span> <span class="o">=</span> <span class="n">DashedLine</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_left</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">arrow1</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">arrow2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_top</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_bottom</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">arrow2</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">arrow1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">arrow2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/DashedLineAnimation.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineAnimation2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+            <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+            <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">step2</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">RIGHT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_left</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+                    <span class="n">step2</span><span class="o">.</span><span class="n">next_to</span><span class="p">,</span> <span class="n">step2</span><span class="p">,</span> <span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/LineAnimation2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LineAnimation3</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">step1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">)</span>
+            <span class="n">step2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">)</span>
+            <span class="n">step3</span> <span class="o">=</span> <span class="n">step2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">step1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">step2</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">RIGHT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+            <span class="n">step3</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">step2</span><span class="p">,</span> <span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step2</span><span class="o">.</span><span class="n">get_left</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">lineCopy</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">step1</span><span class="o">.</span><span class="n">get_right</span><span class="p">(),</span><span class="n">step3</span><span class="o">.</span><span class="n">get_bottom</span><span class="p">(),</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">step1</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">step2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+                    <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">step2</span><span class="p">,</span><span class="n">step3</span><span class="p">),</span>
+                    <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">lineCopy</span><span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/visual_tools/LineAnimation3.mp4" type="video/mp4">
+</video></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2D graphics二维图形类.html" class="btn btn-neutral float-right" title="2D graphics二维图形类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transform.html" class="btn btn-neutral float-left" title="transform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

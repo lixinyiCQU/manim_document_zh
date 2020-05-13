@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>plot_2D &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="coordinate坐标3D" href="CoordinateSystem坐标系类.html" />
+    <link rel="prev" title="GraphScene二维坐标类" href="GraphScene二维坐标类.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">coordinate坐标系</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Coordinate坐标系基础.html">Coordinate坐标系基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphScene二维坐标类.html">GraphScene二维坐标类</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">plot_2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CoordinateSystem坐标系类.html">coordinate坐标3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_3D.html">plot_3D</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">coordinate坐标系</a> &raquo;</li>
+        
+      <li>plot_2D</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/5.Coordinate坐标系/plots_2D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plot-2d">
+<h1>plot_2D<a class="headerlink" href="#plot-2d" title="永久链接至标题">¶</a></h1>
+<p>Elteoremadebeethoven’s code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PlotGraph</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+        <span class="s2">&quot;y_labeled_nums&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+        <span class="s2">&quot;x_labeled_nums&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">7.0</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)),</span>
+        <span class="s2">&quot;x_label_decimal&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;graph_origin&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">DOWN</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">LEFT</span><span class="p">,</span>
+        <span class="s2">&quot;x_label_direction&quot;</span><span class="p">:</span><span class="n">DOWN</span><span class="p">,</span>
+        <span class="s2">&quot;y_label_direction&quot;</span><span class="p">:</span><span class="n">RIGHT</span><span class="p">,</span>
+        <span class="s2">&quot;x_axis_label&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;x_axis_width&quot;</span><span class="p">:</span><span class="mi">10</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="n">animate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#animate=True to add animation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">DOWN</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis_label_mob</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_end</span><span class="p">(),</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">=</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_min</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
+                                    <span class="n">x_min</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+                                    <span class="n">x_max</span> <span class="o">=</span> <span class="mi">7</span>
+                                    <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/PlotGraph.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Range</span><span class="p">(</span><span class="n">in_val</span><span class="p">,</span><span class="n">end_val</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">in_val</span><span class="p">,</span><span class="n">end_val</span><span class="o">+</span><span class="n">step</span><span class="p">,</span><span class="n">step</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot1</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+        <span class="s2">&quot;y_labeled_nums&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+        <span class="s2">&quot;x_labeled_nums&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">7.0</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)),</span>
+        <span class="s2">&quot;x_label_decimal&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;y_label_direction&quot;</span><span class="p">:</span> <span class="n">RIGHT</span><span class="p">,</span>
+        <span class="s2">&quot;x_label_direction&quot;</span><span class="p">:</span> <span class="n">UP</span><span class="p">,</span>
+        <span class="s2">&quot;y_label_decimal&quot;</span><span class="p">:</span><span class="mi">3</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="n">animate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
+                                    <span class="n">x_min</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">x_max</span> <span class="o">=</span> <span class="mi">4</span>
+                                    <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot1.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot1v2</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+        <span class="s2">&quot;graph_origin&quot;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="n">animate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
+                                    <span class="n">x_min</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">x_max</span> <span class="o">=</span> <span class="mi">4</span>
+                                    <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot1v2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot2</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+        <span class="s2">&quot;x_axis_label&quot;</span> <span class="p">:</span> <span class="s2">&quot;$t$&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;y_axis_label&quot;</span> <span class="p">:</span> <span class="s2">&quot;$f(t)$&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Add this line</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="c1"># Parametters of labels</span>
+        <span class="c1">#   For x</span>
+        <span class="n">init_label_x</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">end_label_x</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="n">step_x</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1">#   For y</span>
+        <span class="n">init_label_y</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">end_label_y</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="n">step_y</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="c1"># Position of labels</span>
+        <span class="c1">#   For x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">DOWN</span> <span class="c1">#DOWN is default</span>
+        <span class="c1">#   For y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">LEFT</span>
+        <span class="c1"># Add labels to graph</span>
+        <span class="c1">#   For x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="nb">range</span><span class="p">(</span>
+                                        <span class="n">init_label_x</span><span class="p">,</span>
+                                        <span class="n">end_label_x</span><span class="o">+</span><span class="n">step_x</span><span class="p">,</span>
+                                        <span class="n">step_x</span>
+                                    <span class="p">))</span>
+        <span class="c1">#   For y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="nb">range</span><span class="p">(</span>
+                                        <span class="n">init_label_y</span><span class="p">,</span>
+                                        <span class="n">end_label_y</span><span class="o">+</span><span class="n">step_y</span><span class="p">,</span>
+                                        <span class="n">step_y</span>
+                                    <span class="p">))</span>
+        <span class="c1">#   Add Animation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot3</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="c1"># Custom parametters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+        <span class="c1"># Y parametters</span>
+        <span class="n">init_label_y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_label_y</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="n">step_y</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">LEFT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="nb">range</span><span class="p">(</span>
+                                        <span class="n">init_label_y</span><span class="p">,</span>
+                                        <span class="n">end_label_y</span><span class="o">+</span><span class="n">step_y</span><span class="p">,</span>
+                                        <span class="n">step_y</span>
+                                    <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">))</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot3.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot4</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">UP</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># 3.5 is rounded to 4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">LEFT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">))</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot4.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot5</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">UP</span>
+        <span class="n">values_x</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="s2">&quot;3.5&quot;</span><span class="p">),</span> <span class="c1"># (position 3.5, label &quot;3.5&quot;)</span>
+            <span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{9}{2}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># (position 4.5, label &quot;9/2&quot;)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">()</span> <span class="c1"># Create a group named x_axis_labels</span>
+        <span class="c1">#   pos.   tex.</span>
+        <span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">x_tex</span> <span class="ow">in</span> <span class="n">values_x</span><span class="p">:</span>
+            <span class="n">tex</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="n">x_tex</span><span class="p">)</span> <span class="c1"># Convert string to tex</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">DOWN</span><span class="p">)</span> <span class="c1">#Put tex on the position</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tex</span><span class="p">)</span> <span class="c1">#Add tex in graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot5.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot6</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">UP</span>
+        <span class="c1"># List of values of positions</span>
+        <span class="n">values_decimal_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">3.35</span><span class="p">]</span>
+        <span class="c1"># Transform positions to tex labels</span>
+        <span class="n">list_x</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values_decimal_x</span><span class="p">]]</span>
+        <span class="c1"># List touples of (position,label)</span>
+        <span class="n">values_x</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values_decimal_x</span><span class="p">,</span><span class="n">list_x</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">x_tex</span> <span class="ow">in</span> <span class="n">values_x</span><span class="p">:</span>
+            <span class="n">tex</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="n">x_tex</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">DOWN</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tex</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot6.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plot7</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;axes_color&quot;</span> <span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">ShowCreation</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span>
+            <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">UP</span>
+        <span class="c1"># Additional parametters</span>
+        <span class="n">init_val_x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">step_x</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">end_val_x</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="c1"># Position of labels</span>
+        <span class="n">values_decimal_x</span><span class="o">=</span><span class="n">Range</span><span class="p">(</span><span class="n">init_val_x</span><span class="p">,</span><span class="n">end_val_x</span><span class="p">,</span><span class="n">step_x</span><span class="p">)</span>
+        <span class="c1"># List of labels</span>
+        <span class="n">list_x</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values_decimal_x</span><span class="p">]]</span>
+        <span class="c1"># List touples of (posición,etiqueta)</span>
+        <span class="n">values_x</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values_decimal_x</span><span class="p">,</span><span class="n">list_x</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">x_tex</span> <span class="ow">in</span> <span class="n">values_x</span><span class="p">:</span>
+            <span class="n">tex</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="n">x_tex</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">DOWN</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tex</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">),</span>
+            <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/Plot7.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PlotSinCos</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span> <span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="s2">&quot;y_min&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span>
+        <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;y_tick_frequency&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;x_tick_frequency&quot;</span> <span class="p">:</span> <span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;graph_origin&quot;</span> <span class="p">:</span> <span class="n">ORIGIN</span><span class="p">,</span>
+        <span class="s2">&quot;y_axis_label&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="c1"># Don&#39;t write y axis label</span>
+        <span class="s2">&quot;x_axis_label&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="n">plotSin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                                    <span class="n">color</span> <span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
+                                    <span class="n">x_min</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span>
+                                    <span class="n">x_max</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                                <span class="p">)</span>
+        <span class="n">plotCos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                                    <span class="n">color</span> <span class="o">=</span> <span class="n">GRAY</span><span class="p">,</span>
+                                    <span class="n">x_min</span><span class="o">=-</span><span class="n">PI</span><span class="p">,</span>
+                                    <span class="n">x_max</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                <span class="p">)</span>
+        <span class="n">plotSin</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># width of line</span>
+        <span class="n">plotCos</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># Animation</span>
+        <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="p">(</span><span class="n">plotSin</span><span class="p">,</span><span class="n">plotCos</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+                    <span class="n">ShowCreation</span><span class="p">(</span><span class="n">plot</span><span class="p">),</span>
+                    <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span>
+                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GraphScene</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="c1"># width of edges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">set_stroke</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># color of edges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">YELLOW</span><span class="p">)</span>
+        <span class="c1"># Add x,y labels</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">sin</span><span class="se">\\</span><span class="s2">theta&quot;</span><span class="p">)</span>
+        <span class="n">var</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">theta&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">PURPLE</span><span class="p">)</span>
+        <span class="n">func</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">,</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">var</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">,</span><span class="n">RIGHT</span><span class="o">+</span><span class="n">UP</span><span class="p">)</span>
+        <span class="c1"># Y labels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">label_direction</span> <span class="o">=</span> <span class="n">LEFT</span><span class="o">*</span><span class="mf">1.5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="c1">#Parametters of x labels</span>
+        <span class="n">init_val_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">step_x</span> <span class="o">=</span> <span class="n">PI</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">end_val_x</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span>
+        <span class="c1"># List of the positions of x labels</span>
+        <span class="n">values_decimal_x</span><span class="o">=</span><span class="n">Range</span><span class="p">(</span><span class="n">init_val_x</span><span class="p">,</span><span class="n">end_val_x</span><span class="p">,</span><span class="n">step_x</span><span class="p">)</span>
+        <span class="c1"># List of tex objects</span>
+        <span class="n">list_x</span><span class="o">=</span><span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;-</span><span class="se">\\</span><span class="s2">frac{3</span><span class="se">\\</span><span class="s2">pi}</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1">#   -3pi/2</span>
+                            <span class="s2">&quot;-</span><span class="se">\\</span><span class="s2">pi&quot;</span><span class="p">,</span> <span class="c1">#              -pi</span>
+                            <span class="s2">&quot;-</span><span class="se">\\</span><span class="s2">frac{</span><span class="se">\\</span><span class="s2">pi}</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1">#   -pi/2</span>
+                            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">,&quot;</span><span class="p">,</span> <span class="c1">#                 0 (space)</span>
+                            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac{</span><span class="se">\\</span><span class="s2">pi}</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1">#     pi/2</span>
+                            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">pi&quot;</span><span class="p">,</span><span class="c1">#                 pi</span>
+                            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">frac{3</span><span class="se">\\</span><span class="s2">pi}</span><span class="si">{2}</span><span class="s2">&quot;</span> <span class="c1">#     3pi/2</span>
+                          <span class="p">)</span>
+        <span class="c1">#List touples (position,label)</span>
+        <span class="n">values_x</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values_decimal_x</span><span class="p">,</span><span class="n">list_x</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">x_tex</span> <span class="ow">in</span> <span class="n">values_x</span><span class="p">:</span>
+            <span class="n">x_tex</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">x_val</span> <span class="o">==</span> <span class="o">-</span><span class="n">PI</span> <span class="ow">or</span> <span class="n">x_val</span> <span class="o">==</span> <span class="n">PI</span><span class="p">:</span> <span class="c1">#if x is equals -pi or pi</span>
+                <span class="n">x_tex</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">DOWN</span><span class="p">)</span> <span class="c1">#Put 2*Down</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># In another case</span>
+                <span class="n">x_tex</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords_to_point</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">DOWN</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x_tex</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">Write</span><span class="p">(</span><span class="n">objeto</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">objeto</span> <span class="ow">in</span> <span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">y_axis</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">x_axis</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">x_axis_labels</span><span class="p">,</span>
+                    <span class="n">func</span><span class="p">,</span><span class="n">var</span>
+                <span class="p">]</span>
+            <span class="p">],</span>
+            <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/plots_2D/PlotSinCos.mp4" type="video/mp4">
+</video></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CoordinateSystem坐标系类.html" class="btn btn-neutral float-right" title="coordinate坐标3D" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GraphScene二维坐标类.html" class="btn btn-neutral float-left" title="GraphScene二维坐标类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

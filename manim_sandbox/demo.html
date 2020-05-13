@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>demo &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="CONFIG" href="CONFIG.html" />
+    <link rel="prev" title="manim_sandbox" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">manim_sandbox</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">CONFIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CheckFormulaByTXT工具类.html">CheckFormulaByTXT工具类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScreenGrid工具类.html">ScreenGrid工具类</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">manim_sandbox</a> &raquo;</li>
+        
+      <li>demo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manim_sandbox/demo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="demo">
+<h1>demo<a class="headerlink" href="#demo" title="永久链接至标题">¶</a></h1>
+<p>其实我觉得代码注释写好，还是能直接看的，但是也许可以有更直观的管理方案：那就是把工程中遇到的需要使用的工具类模板方法等等，直接剥离出来使用“最小可实现用例demo”，写成rst文件，然后在文档中 make html 使用 Sphinx 转换成为html网页文件，随便找个地方托管，就能在线看网页文档。</p>
+<p>当然，写工具类分享者已经挺麻烦的，不能苛求文档还要过分精美细致，毕竟代码才是最好的文档，但是好文档对扩展用户群，吸引别人关注你的github仓库有很重大的影响。但是作为文档，也许内容已经太冗长了，也许应该在  <a class="reference external" href="https://github.com/manim-kindergarten/manim_sandbox">manim-kindergarten-manim_sandbox</a>    新建一个Sphinx文档，专门写附加的类和方法。</p>
+<p>具体的代码和视频（Up主可以插入视频链接）插入rst语法可以是这样的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="p">::</span>
+
+    <span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="o">..</span> <span class="n">code</span><span class="p">::</span>
+
+    <span class="k">class</span> <span class="nc">PlotGraph</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+        <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;xxx&quot;</span> <span class="p">:</span> <span class="n">yy</span><span class="p">,</span>
+            <span class="s2">&quot;xxxx&quot;</span><span class="p">:</span><span class="n">yyyy</span>
+        <span class="p">}</span>
+
+        <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">XXXXXXXXXXXXXXXXXXXXXXXX</span>
+
+
+
+<span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">html</span>
+
+    <span class="o">&lt;</span><span class="n">video</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">controls</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">source</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;../_static/assets下的子文件夹/视频名称.mp4&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;video/mp4&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">video</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>插入代码还能这样:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">..</span> <span class="n">literalinclude</span><span class="p">::</span> <span class="o">../</span><span class="n">assets</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">manim</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">graphing</span><span class="o">.</span><span class="n">py</span>
+<span class="p">:</span><span class="n">linenos</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>插入文件的第几行到第几行，行号开头数字:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">literalinclude</span><span class="p">::</span> <span class="o">./</span><span class="n">manimlib</span><span class="o">/</span><span class="n">constants</span><span class="o">.</span><span class="n">py</span>
+    <span class="p">:</span><span class="n">lines</span><span class="p">:</span> <span class="mi">197</span><span class="o">-</span><span class="mi">258</span>
+    <span class="p">:</span><span class="n">lineno</span><span class="o">-</span><span class="n">start</span><span class="p">:</span> <span class="mi">197</span>
+</pre></div>
+</div>
+<p>Sphinx有插件能够自动生成文档，写法是这样的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autoclass</span><span class="p">::</span> <span class="n">manimlib</span><span class="o">.</span><span class="n">mobject</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">Line</span>
+<span class="p">:</span><span class="n">members</span><span class="p">:</span>
+
+
+<span class="o">..</span> <span class="n">autoclass</span><span class="p">::</span> <span class="n">manimlib</span><span class="o">.</span><span class="n">mobject</span><span class="o">.</span><span class="n">svg</span><span class="o">.</span><span class="n">tex_mobject</span><span class="o">.</span><span class="n">TexMobject</span>
+<span class="o">..</span> <span class="n">automethod</span><span class="p">::</span> <span class="n">manimlib</span><span class="o">.</span><span class="n">mobject</span><span class="o">.</span><span class="n">svg</span><span class="o">.</span><span class="n">tex_mobject</span><span class="o">.</span><span class="n">TexMobject</span><span class="o">.</span><span class="n">get_tex_string</span>
+<span class="o">..</span> <span class="n">automethod</span><span class="p">::</span> <span class="n">manimlib</span><span class="o">.</span><span class="n">mobject</span><span class="o">.</span><span class="n">svg</span><span class="o">.</span><span class="n">tex_mobject</span><span class="o">.</span><span class="n">TexMobject</span><span class="o">.</span><span class="n">set_color_by_tex</span>
+</pre></div>
+</div>
+<p>插图:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="o">../</span><span class="n">assets</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">图片名称</span><span class="o">.</span><span class="n">png</span>
+<span class="p">:</span><span class="n">alt</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>然后Sphinx语法很多教程连国内驰名的史上最垃圾的搜索引擎都能直接搜到（建议用别的搜索引擎），就不赘述了。下面举两个例子说明下对于工具类管理，我的设想方案。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CONFIG.html" class="btn btn-neutral float-right" title="CONFIG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="manim_sandbox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

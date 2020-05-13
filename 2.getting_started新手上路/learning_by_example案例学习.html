@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning by Example案例学习 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Mathematical Objects数学对象" href="mathematical_objects数学对象.html" />
+    <link rel="prev" title="Getting Started新手上路" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started新手上路</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Learning by Example案例学习</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#squaretocircle">SquareToCircle成方圆</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manim-help">manim help帮助</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mathematical_objects数学对象.html">Mathematical Objects数学对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animating_mobjects.html">Animating Mobjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making_a_scene.html">Making a Scene</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Getting Started新手上路</a> &raquo;</li>
+        
+      <li>Learning by Example案例学习</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/2.getting_started新手上路/learning_by_example案例学习.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-by-example">
+<h1>Learning by Example案例学习<a class="headerlink" href="#learning-by-example" title="永久链接至标题">¶</a></h1>
+<p>写视频之前必须学会制作图片，因为视频就是根据帧率连续播放图片的过程。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>此例子，来自 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt?p=5">这一集</a>    。</p>
+</div>
+<p>example_scenes.py中自定义一个类。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FirstScene</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">text</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>命令行</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">manim</span>  <span class="n">example_scenes</span><span class="o">.</span><span class="n">py</span> <span class="n">FirstScene</span> <span class="o">-</span><span class="n">ps</span>
+</pre></div>
+</div>
+<p>新版本中，任何py文件只要不选定里面的类（比如FirstScene）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">manim</span>  <span class="n">example_scenes</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">ps</span>
+</pre></div>
+</div>
+<p>就会让你选：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">:</span> <span class="n">FirstScene</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">OpeningManimExample</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">SquareToCircle</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">UpdatersExample</span>
+<span class="mi">5</span><span class="p">:</span> <span class="n">WarpSquare</span>
+<span class="mi">6</span><span class="p">:</span> <span class="n">WriteStuff</span>
+
+<span class="n">Choose</span> <span class="n">number</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">desired</span> <span class="n">scene</span><span class="o">/</span><span class="n">arguments</span><span class="o">.</span>
+<span class="p">(</span><span class="n">Use</span> <span class="n">comma</span> <span class="n">separated</span> <span class="nb">list</span> <span class="k">for</span> <span class="n">multiple</span> <span class="n">entries</span><span class="p">)</span>
+<span class="n">Choice</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/FirstScene.png"><img alt="../_images/FirstScene.png" src="../_images/FirstScene.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">FirstScene</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+</div>
+<p>画点</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Class</span> <span class="n">Positions</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">object</span><span class="o">=</span><span class="n">Dot</span><span class="p">()</span>
+      <span class="c1">#用object.to_edge(UP)传参为常量中的向量UP可以向量指定位置np.array((0., 1., 0.))</span>
+      <span class="c1">#用object.to_corner(UR)传参为常量中的向量UR可以移动到向量指定位置np.array((右1., 上1., 0.))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>定位方式可以有绝对和相对定位。</p>
+<p>绝对定位</p>
+<p>.to_edge()和.to_corner()方法</p>
+<p>.to_edge(DIRECTION,buff=NUMBER)，可以设置边距buff</p>
+<p>相对定位</p>
+<p>.move_to()</p>
+<p>.next_to()</p>
+<p>.shift()</p>
+<div class="section" id="squaretocircle">
+<h2>SquareToCircle成方圆<a class="headerlink" href="#squaretocircle" title="永久链接至标题">¶</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这部分是EulerTour写的教程,我只是翻译+学习笔记，github早就有很多教程，但是为了方便查询使用，我才整合这么一份文档。他还整了个在线manim网站 <a class="reference external" href="https://www.eulertour.com/">www.eulertour.com</a></p>
+</div>
+<p>样例 <code class="docutils literal notranslate"><span class="pre">example_scenes.py</span></code> contains simple examples that we can use to learn about manim.</p>
+<p>Go ahead and try out the <code class="docutils literal notranslate"><span class="pre">SquareToCircle</span></code> scene by running it with 命令 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">manim</span> <span class="pre">example_scenes.py</span> <span class="pre">SquareToCircle</span> <span class="pre">-p</span></code>
+in manim directory.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">SquareToCircle</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+        <span class="n">square</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="n">square</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TAU</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">set_fill</span><span class="p">(</span><span class="n">PINK</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">circle</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<video width="560" height="315" controls>
+    <source src="../_static/Animation/SquareToCircle.mp4" type="video/mp4">
+</video><div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">-p</span></code> plays the rendered video with default video player.预览</p>
+<p>Other frequently used flags are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> for rendering video in lower resolution低分辨率 (which renders faster)渲染更快</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span></code> to show the last frame of the video.显示最后一帧</p></li>
+</ul>
+</div></blockquote>
+<p>Run <code class="docutils literal notranslate"><span class="pre">manim</span> <span class="pre">-h</span></code> all the available flags (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">manim</span> <span class="pre">-h</span></code> if you installed it to a venv)</p>
+</div>
+<p>Let’s step through each line of <code class="docutils literal notranslate"><span class="pre">SquareToCircle</span></code>，一行行看</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SquareToCircle</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+</pre></div>
+</td></tr></table></div>
+<p>You create videos in manim by writing <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> classes.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/Scene.JPG"><img alt="../_images/Scene.JPG" src="../_images/Scene.JPG" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">VisualStudioCode ctrl+点击查看类定义</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+<p>Each <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> in manim is self-contained配套齐全的/自给自足的. That means everything
+you created under this scene does not exist outside the class.意思是：</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/self-contained.JPG"><img alt="../_images/self-contained.JPG" src="../_images/self-contained.JPG" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">如图几个Scene类互不影响</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
+</div>
+<p>比如 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">manim</span> <span class="pre">example_scenes.py</span> <span class="pre">OpeningManimExample</span> <span class="pre">-pl</span></code> 和 SquareToCircle 的代码,不相干。</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">construct()</span></code> specifies what is displayed on the screen
+when the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> is rendered to video.Scene类渲染时指定屏幕中要罗列的什么。</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">Circle()</span></code> and <code class="docutils literal notranslate"><span class="pre">Square()</span></code> create <code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code>.</p>
+<p>Both of these are instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> subclasses子类Moject实例, the base class for objects对象的基类 in manim. Note
+that instantiating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> does not add it to the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>, so you wouldn’t see anything if you were to render
+the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> at this point.实例化方圆对象，还没添加到Scene类中，没渲染对应的Scene之前不能看见。</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">square</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+<span class="n">square</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">TAU</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">circle</span><span class="o">.</span><span class="n">set_fill</span><span class="p">(</span><span class="n">PINK</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">flip()</span></code> <code class="docutils literal notranslate"><span class="pre">rotate()</span></code> <code class="docutils literal notranslate"><span class="pre">set_fill()</span></code> （方法依然可以在VisualStudioCode用ctrl+点击查看定义） apply various modifications应用各种mobjects的变更 to the mobjects before animating
+them.  The call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">flip()</span></code> flips the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> across the RIGHT vector.  This is equivalent
+to a refection across the x-axis.默认方形是从左上角点顺时针，关于x轴对称翻折=关于RIGHT（定义在manimlib/constants.py）常量向量np.array((1., 0., 0.))对称镜像，结果是从左下角点逆时针。</p>
+<p>The call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">rotate()</span></code> rotates the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> 3/8ths of a full rotation counterclockwise逆时针旋转3/8圆.</p>
+<p>The call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_fill()</span></code> sets
+the fill color for the <code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> to pink粉色填充, and its opacity不透明度 to 0.5.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">circle</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>To generated animation, <code class="xref py py-class docutils literal notranslate"><span class="pre">Animation</span></code> classes动画类 are used.</p>
+<p>每个动画类传入1或多个Mobject对象参数Each <code class="xref py py-class docutils literal notranslate"><span class="pre">Animation</span></code> takes one or more <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> instances as arguments, which it animates
+when passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">play()</span></code> 应用play()方法. This is how video is typically
+created in manim.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> instances are automatically added to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> when they are animated 动画化Mobject对象时自动添加到场景.
+You can add a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> manually by passing it as an argument to  <code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code> 用此方法手动添加mobject到scene场景.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">ShowCreation</span></code> draws a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> to the screen显示在屏幕上.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code> morphs one <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> into another变换为另一个图形.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">FadeOut</span></code> fades a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mobject</span></code> out of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>.淡出</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>第一个Mobject对象会被 <code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code>  方法修改，第二个对象不会被添加到Scene类中。
+Only the first argument to <code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code> is modified,
+the second is not added to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>. <code class="xref py py-class docutils literal notranslate"><span class="pre">Transform</span></code>
+only changes the appearance外形 but not the underlying根本/基础的 properties属性.</p>
+<p>After the call to   <code class="docutils literal notranslate"><span class="pre">transform()</span></code> , <code class="docutils literal notranslate"><span class="pre">square</span></code> is still a   <code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code>  instance but with the shape of <code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code> .
+例子中， <code class="docutils literal notranslate"><span class="pre">transform()</span></code>  变换后  <code class="docutils literal notranslate"><span class="pre">square</span></code>  还是  <code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> 的实例，仅仅是渲染出来圆形外表，还要调用 <code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> 的属性和方法。<a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt?p=11">03:40动画很清晰</a> 。</p>
+</div>
+<p>补充一个类似的案例：from <a class="reference external" href="https://github.com/malhotra5/Manim-Tutorial">manim-tutorial</a> 。</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Shapes</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="c1">#A few simple shapes</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+        <span class="n">line</span><span class="o">=</span><span class="n">Line</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">triangle</span><span class="o">=</span><span class="n">Polygon</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreation</span><span class="p">(</span><span class="n">circle</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">circle</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">square</span><span class="p">,</span><span class="n">triangle</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<video width="700" height="394" controls>
+    <source src="../_static/manim-tutorial/basics_Shapes.mp4" type="video/mp4">
+</video></div>
+<div class="section" id="manim-help">
+<h2>manim help帮助<a class="headerlink" href="#manim-help" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span>&#160; <span class="pre">manim</span> <span class="pre">--help</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>usage: manim.py [-h] [-p] [-w] [-s] [-l] [-m] [--high_quality] [-g] [-i] [-f]
+               [-t] [-q] [-a] [-o FILE_NAME] [-n START_AT_ANIMATION_NUMBER从动画编号开始]
+               [-r 分辨率RESOLUTION] [-c COLOR] [--sound] [--leave_progress_bars]
+               [--media_dir MEDIA_DIR]
+               [--video_dir VIDEO_DIR | --video_output_dir VIDEO_OUTPUT_DIR]
+               [--tex_dir TEX_DIR] [--livestream] [--to-twitch]
+               [--with-key TWITCH_KEY]
+               [file] [scene_names [scene_names ...]]
+positional arguments:
+file                  path to file holding the python code for the scene包含场景的python代码的文件的路径，如example_scenes.py
+scene_names           Name of the Scene class you want to see您要查看的Scene类的名称，如SquareToCircle
+
+optional arguments:
+-h, --help            show this help message and exit
+-p, --preview         Automatically open the saved file once its done完成后自动打开预览保存的文件
+
+-w, --write_to_movie  Render the scene as a movie file将场景渲染为电影文件
+-s, --save_last_frame 显示最后一帧Save the last frame
+-l, --low_quality     Render at a low quality (for faster rendering)快，低质量渲染
+-m, --medium_quality  Render at a medium quality 中质量
+--high_quality        Render at a high quality 高质量
+-g, --save_pngs       Save each frame as a png 每帧保存png
+-i, --save_as_gif     Save the video as gif 视频保存为gif
+-f, --show_file_in_finder    Show the output file in finder 在finder中显示输出文件
+-t, --transparent     Render to a movie file with an alpha channel使用Alpha通道渲染到电影文件
+-q, --quiet
+-a, --write_all       Write all the scenes from a file写一个文件中所有场景
+-o FILE_NAME, --file_name FILE_NAME
+                      Specify the name of the output file, ifit should be different from the scene class name指定输出文件的名称（如果它与场景类名称不同）
+-n START_AT_ANIMATION_NUMBER, --start_at_animation_number START_AT_ANIMATION_NUMBER
+                      Start rendering not from the first animation, but from another, specified by its index.
+                      If you passin two comma separated values, e.g. &quot;3,6&quot;, it will end the rendering at the second value。
+                      不从第一个动画开始渲染，而是从其索引指定的另一个动画开始渲染。如果您传入两个逗号分隔的index值，
+                      例如“ 3,6”，它将在第二个index值处结束渲染。
+-r RESOLUTION, --resolution RESOLUTION
+                      Resolution, passed as &quot;height,width&quot;分辨率，“高度，宽度”传递
+-c COLOR, --color COLOR
+                      Background color背景色
+--sound               Play a success/failure sound显示成功/失败的声音
+--leave_progress_bars
+                      Leave progress bars displayed in terminal保持进度条显示在终端中，
+--media_dir MEDIA_DIR
+                      directory to write media写入多媒体路径
+--video_dir VIDEO_DIR
+                      directory to write file tree for video写入视频文件树的目录
+--video_output_dir VIDEO_OUTPUT_DIR
+                      directory to write video 编写视频的目录
+--tex_dir TEX_DIR     directory to write tex 设置text路径
+--livestream          Run in streaming mode流模式
+--to-twitch           Stream to twitch
+--with-key TWITCH_KEY
+                      Stream key for twitch
+</pre></div>
+</div>
+<p>举几个例子，有些选项被禁用了，但是可以曲线救国，比如MP4用ffmpeg可以分出每帧的图片做成gif,格式转换在线工具也不少。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -pl
+</pre></div>
+</div>
+<p>默认 <code class="docutils literal notranslate"><span class="pre">-preview</span></code> 分辨率2560x1440 &#64; 60fps，在manimlib/contants.py有需要可以自行修改， <code class="docutils literal notranslate"><span class="pre">-l</span></code> 低分辨率480p15,小项目查阅的时候，快很多。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">example_scenes</span><span class="o">.</span><span class="n">py</span> <span class="n">SquareToCircle</span> <span class="o">-</span><span class="n">ps</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-s</span></code> 可以在images文件夹下看到保存的最后一张图片，比如在一个比较大的项目中，想看自己的某一张图画出来效果，可以最后一帧 <code class="docutils literal notranslate"><span class="pre">self.play(ShowCreation(***))</span></code> 然后 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 看图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle --write_all -l
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> 把文件中所有scene写成视频。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -o 指定文件名
+</pre></div>
+</div>
+<p>输出 指定文件名.mp4。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -pl -c WHITE
+</pre></div>
+</div>
+<p>在manimlib/constants.py中查看颜色映射，等于16进制#FFFFFF,也就是说可以直接在线取色器工具获得数值，传入想要的背景颜色。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -pl -c <span class="s1">&#39;#FFFFFF&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -pl -c <span class="s1">&#39;#FFFFFF&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>self.play<span class="o">(</span>ShowCreation<span class="o">(</span>square<span class="o">))</span><span class="c1">#0</span>
+self.play<span class="o">(</span>Transform<span class="o">(</span>square, circle<span class="o">))</span><span class="c1">#1</span>
+self.play<span class="o">(</span>FadeOut<span class="o">(</span>square<span class="o">))</span><span class="c1">#2</span>
+</pre></div>
+</div>
+<p>example_scenes.py SquareToCircle有3个animations渲染任务，当你在编辑一个很复杂有很多 animations 的Scene时，可以：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -pl -n <span class="m">2</span>
+</pre></div>
+</div>
+<p>这就能直接从第3个（0开始）animations渲染到最后。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>manim example_scenes.py SquareToCircle -r <span class="m">1080</span>
+</pre></div>
+</div>
+<p>获得 1920x1080 分辨率的video，命令可以自己摸索着组合，常用几个会用就行。</p>
+<p>早期Elteoremadebeethoven有个仓库和youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，然后cai-hust学习并且做了相关的教程MarkDown笔记 <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">manim-tutorial-CN</a> ，引用标明下，下面内容是他们在社区分享的，我只是想整合，方便查阅使用Manim。</p>
+<p><strong>默认显示进度条</strong></p>
+<p>默认设置在manimlib/config.py，manimlib/extract_secne.py与manimlib/scene.py里进行定义，可以修改该文件进行修改默认配置,注意因为修改源码所以要小心</p>
+<p>例如：在上面的三个文件里：</p>
+<p>将里面所有的“–leave<em>progress</em>bars”和“leave<em>progress</em>bars”修改为“–remove<em>progress</em>bars”与“remove<em>_progress</em>bars”,同时将</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1567668580431.png" />
+</div>
+<p>此处的action改成不显示</p>
+<p>这样如果加上–remove<em>progress</em>bars就不会显示进度条了，而默认是显示进度条的</p>
+<p><strong>改变视频存放位置</strong></p>
+<p>改变<em>manimlib/constants.py</em>中的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">MEDIA_DIR</span><span class="p">):</span>
+    <span class="n">MEDIA_DIR</span> <span class="o">=</span> <span class="s2">&quot;./media&quot;</span>
+</pre></div>
+</div>
+<p>改<code class="docutils literal notranslate"><span class="pre">./media</span></code>为你想要存放的位置</p>
+<p><strong>存为gif</strong></p>
+<blockquote>
+<div><p>You can use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">manim</span> <span class="pre">animation.py</span> <span class="pre">name_scene</span> <span class="pre">-im</span></code> to render
+gif medium quality, or
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">manim</span> <span class="pre">animation.py</span> <span class="pre">name_scene</span> <span class="pre">-gm</span></code> to render all frames
+as images, the images are saved in a folder</p>
+</div></blockquote>
+<p>ps: 选项 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 被禁用了，依旧会生成mp4文件，加入QQ群下载群文件“常见问题.pdf”可以解决。
+如果想获得GIF,也可以曲线救国，在mp4文件浏览器地址栏输入cmd，然后命令行输入：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg   -i SquareToCircle.mp4 -b:v 2048k SquareToCircle.gif
+</pre></div>
+</div>
+<p>就能得到GIF,github有个  <a class="reference external" href="https://github.com/3b1b/manim/issues/699">issues</a>  提供更高质量的GIF方案，我暂时没相关的需求，没折腾过。</p>
+<p>通过例子学习是最快的,看已有的项目模仿也很快，但是系统学习+定制还是要看源码manimlib。详情可以看这里PyDoc生成的结果 <a class="reference internal" href="../7.ManimLibrary库/manim_类属性方法.html#manimlibclassespropertiesmethods"><span class="std std-ref">manim类属性方法</span></a>  。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mathematical_objects数学对象.html" class="btn btn-neutral float-right" title="Mathematical Objects数学对象" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Getting Started新手上路" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

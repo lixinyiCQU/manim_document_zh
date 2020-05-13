@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manim’s 文档documentation! &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Installation安装" href="1.installation安装/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Manim’s 文档documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manim-s-documentation">
+<h1>Manim’s 文档documentation!<a class="headerlink" href="#manim-s-documentation" title="永久链接至标题">¶</a></h1>
+<p>These docs are generated from the master branch of the
+<a class="reference external" href="https://github.com/3b1b/manim">Manim repo</a>. You can contribute by submitting
+a pull request there.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这是我看官网链接的EulerTour写的 <a class="reference external" href="https://www.eulertour.com/docs/">eulertour-docs</a>,中文翻译+ 很多 <code class="docutils literal notranslate"><span class="pre">Manim</span></code> 教程的学习笔记,
+方便自己查询的笔记，虽然github早就有很多教程，但是为了方便查询使用，我才整合这么一份文档，一开始是为了方便自己使用.
+我觉得，一款成熟的软件都必须有配套成熟的文档系统。文档需要的是简单基础元认知的示例.
+工程样例已经很多了，比如3b1b的旧项目，或者 <a class="reference external" href="https://github.com/Elteoremadebeethoven/MyAnimations">Elteoremadebeethoven的项目</a>
+<a class="reference external" href="https://github.com/Elteoremadebeethoven/manim_3feb_docs.github.io/tree/master/source">elteoremadebeethoven-manim_3feb_docs</a>
+Elteoremadebeethoven大神 还有个仓库和配套的youtude教学视频，
+<a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation-course-with-Manim</a>
+小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+不是我写的部分我都会标注清晰来源，我只是想把Markdown、pdf等相关资料整合编辑成方便的文档格式，顺便学习笔记心得和一些技巧，以方便查阅使用Manim，用到的我都会标明来源。虽然我已经很注意每个记笔记来源都保持原有链接，但是可莪能有疏漏，如果你看到我学习的来源而我忘记标明出处的，请标注一下，谢谢。水平有限，抛砖引玉。</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1.installation安装/index.html">Installation安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.installation安装/linux.html">Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/linux.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/linux.html#arch-linux">Arch Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1.installation安装/mac.html">Mac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.installation安装/windows.html">Windows安装Manim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/windows.html#install-system-libraries">Install System Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/windows.html#path-configuration">Path configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/windows.html#installing-python-packages-and-manim">Installing python packages and manim需要的库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/windows.html#test-the-installation">Test the installation测试安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.installation安装/windows.html#by-the-waywin">By the way总想对Win用户说点啥</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1.installation安装/ffmpeg.html">ffmpeg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="constants常量.html">Manim Constants常量</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#directories">Directories配置目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#resolution">Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#frame-dimensions">Frame dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#buffs">Buffs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#tex">Tex配置文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#numerical-constants">Numerical Constants数值常量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#camera-configuration">Camera Configuration配置相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#coordinatesvectors">Coordinates坐标Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants常量.html#color-palette">Color palette</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2.getting_started新手上路/index.html">Getting Started新手上路</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.getting_started新手上路/learning_by_example案例学习.html">Learning by Example案例学习</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="2.getting_started新手上路/learning_by_example案例学习.html#squaretocircle">SquareToCircle成方圆</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2.getting_started新手上路/learning_by_example案例学习.html#manim-help">manim help帮助</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.getting_started新手上路/mathematical_objects数学对象.html">Mathematical Objects数学对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.getting_started新手上路/animating_mobjects.html">Animating Mobjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.getting_started新手上路/making_a_scene.html">Making a Scene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="2.getting_started新手上路/making_a_scene.html#scene">基础动画类 Scene</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/animation动画变换入门.html">animation动画变换入门</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/animation动画变换入门.html#fade">Fade淡出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/animation动画变换入门.html#grow">Grow生长</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/animation动画变换入门.html#diagonal-directions">Diagonal Directions对角方向</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/animation显示操作.html">animation显示操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/animation显示操作.html#displayoperation">显示操作</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/visual_tools.html">visual_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/2D graphics二维图形类.html">2D graphics二维图形类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/2D graphics二维图形类.html#id1">二维图形类</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/3D graphics三维图形类.html">3D graphics三维图形类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/3D graphics三维图形类.html#id1">三维图形类</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/VGroup群组类.html">VGroup群组类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3.ShapesAnimation图形动画/VGroup群组类.html#id1">10. 群组类VGroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.ShapesAnimation图形动画/Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/TextMobject文本类.html">TextMobject文本类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/LaTeX文本类TexMobject.html">LaTeX文本类TexMobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/text数组.html">text数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/text_like_arrays.html">text_like_arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/Chinese等.html">Chinese中文等</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/Notation公式符号.html">Notation公式符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.FontsFormulaColor字体公式色彩/LaTeX特殊包.html">LaTeX特殊包</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5.Coordinate坐标系/index.html">coordinate坐标系</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5.Coordinate坐标系/Coordinate坐标系基础.html">Coordinate坐标系基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5.Coordinate坐标系/Coordinate坐标系基础.html#using-coordinates">Using Coordinates使用坐标系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5.Coordinate坐标系/Coordinate坐标系基础.html#coordinate-aliasing">Coordinate Aliasing坐标别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5.Coordinate坐标系/Coordinate坐标系基础.html#coordinate-arithmetic">Coordinate Arithmetic坐标运算</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.Coordinate坐标系/GraphScene二维坐标类.html">GraphScene二维坐标类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5.Coordinate坐标系/GraphScene二维坐标类.html#id1">二维坐标类 GraphScene</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.Coordinate坐标系/plots_2D.html">plot_2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.Coordinate坐标系/CoordinateSystem坐标系类.html">coordinate坐标3D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5.Coordinate坐标系/CoordinateSystem坐标系类.html#id1">坐标系类</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.Coordinate坐标系/plots_3D.html">plot_3D</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6.camera相机类/index.html">camera相机参数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6.camera相机类/camera相机参数.html">camera相机参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="6.camera相机类/camera相机参数.html#id1">camera相机参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7.ManimLibrary库/index.html">ManimLibrary库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7.ManimLibrary库/manim_packages包.html">Manim packages库包</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.ManimLibrary库/manim_packages包.html#ubication">Ubication位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.ManimLibrary库/manim_packages包.html#tree">Tree文件树</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.ManimLibrary库/manim_类属性方法.html">manim类属性方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.ManimLibrary库/ManimLibrary库.html">ManimLibrary库</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html">Indication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#focus-on">Focus On</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#indicate">Indicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#flash">Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#circle-indicate">Circle Indicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-passing-flash">Show Passing Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-creation-then-destruction">Show Creation Then Destruction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-creation-then-fade-out">Show Creation Then Fade Out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#animation-on-surrounding-rectangle">Animation On Surrounding Rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-passing-flash-around">Show Passing Flash Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-creation-then-destruction-around">Show Creation Then Destruction Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#show-creation-then-fade-around">Show Creation Then Fade Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#apply-wave">Apply Wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#wiggle-out-thenin">Wiggle Out ThenIn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/indication.html#turn-inside-out">Turn Inside Out</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html">Movement and Rotations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#homotopy">Homotopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#complex-homotopy">Complex Homotopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#phase-flow">Phase Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#move-along-path">Move Along Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#rotating">Rotating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.1Animations类的属性和方法/movement.html#rotate">Rotate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.1Animations类的属性和方法/index.html#rate-functions">Rate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.1Animations类的属性和方法/index.html#submobject-modes">Submobject modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.1Animations类的属性和方法/index.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/tex.html">TeX and Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.2Mobjects类的属性和方法/tex.html#texmobject">TexMobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.2Mobjects类的属性和方法/tex.html#textmobject">TextMobject</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/geometric.html">Geometric objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.2Mobjects类的属性和方法/geometric.html#arc-types">Arc types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.2Mobjects类的属性和方法/geometric.html#line-types">Line types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.2Mobjects类的属性和方法/geometric.html#rectangle-types">Rectangle types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/coord_system.html">Coordinate system (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/brace.html">Brace (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/number_line_and_plane.html">Number line and Number plane (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/value_tracker.html">Value Tracker (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/decimal_numbers.html">Decimal numbers and Integers (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/functions.html">Functions (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/svgs_images.html">SVGs and Images (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2Mobjects类的属性和方法/index.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7.3Scenes类的属性和方法/scene.html">Scene (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.3Scenes类的属性和方法/graph_scene.html">Graph Scene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="7.3Scenes类的属性和方法/graph_scene.html#riemann-rectangles">Riemann rectangles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7.3Scenes类的属性和方法/graph_scene.html#riemann-rectangles-animation">Riemann rectangles animation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.3Scenes类的属性和方法/three_d_scene.html">3D Scene (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.3Scenes类的属性和方法/moving_camera_scene.html">Moving camera scene (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.3Scenes类的属性和方法/zoomed_scene.html">Zoomed scene (TODO)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8.常见问题/index.html">常见问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="8.常见问题/InstallationProblems安装问题.html">InstallationProblems安装问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.常见问题/RunTimeProblems运行时问题.html">RunTimeProblems运行时问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.常见问题/Others其他问题.html">Problems其他问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.常见问题/Notes注意.html">Notice注意</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about关于.html">About关于</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about关于.html#extensions">extensions脚本商城</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manim_sandbox/index.html">manim_sandbox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manim_sandbox/demo.html">demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manim_sandbox/CONFIG.html">CONFIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manim_sandbox/CheckFormulaByTXT工具类.html">CheckFormulaByTXT工具类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manim_sandbox/ScreenGrid工具类.html">ScreenGrid工具类</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1.installation安装/index.html" class="btn btn-neutral float-right" title="Installation安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

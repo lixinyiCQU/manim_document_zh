@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ShapesAnimation图形动画 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="animation动画变换入门" href="animation动画变换入门.html" />
+    <link rel="prev" title="Making a Scene" href="../2.getting_started新手上路/making_a_scene.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ShapesAnimation图形动画</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation显示操作.html">animation显示操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_tools.html">visual_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2D graphics二维图形类.html">2D graphics二维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VGroup群组类.html">VGroup群组类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ShapesAnimation图形动画</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/3.ShapesAnimation图形动画/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shapesanimation">
+<h1>ShapesAnimation图形动画<a class="headerlink" href="#shapesanimation" title="永久链接至标题">¶</a></h1>
+<p>ShapesAnimation图形动画</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html#fade">Fade淡出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html#grow">Grow生长</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html#diagonal-directions">Diagonal Directions对角方向</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="animation显示操作.html">animation显示操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation显示操作.html#displayoperation">显示操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#textmobject">1 基本步骤（以TextMobject为例）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#id2">5 位置相关的函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#id3">6 播放动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#id4">7 设置颜色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#id5">8 缩放大小</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation显示操作.html#id6">9 同步播放动画</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visual_tools.html">visual_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2D graphics二维图形类.html">2D graphics二维图形类</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2D graphics二维图形类.html#id1">二维图形类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#dot">1 点Dot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#circle">2 圆形Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#annulus">3 环Annulus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#rectangle">4 长方形Rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#square">5 方形Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#ellipse">6 椭圆Ellipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#arc">7 弧Arc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2D graphics二维图形类.html#line">8 线Line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html#id1">三维图形类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="3D graphics三维图形类.html#sphere">1 球 Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3D graphics三维图形类.html#cube">2 立方 Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3D graphics三维图形类.html#prism">3 棱柱Prism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3D graphics三维图形类.html#parametricsurface">4 参数曲面 ParametricSurface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3D graphics三维图形类.html#parametricfunction">5 参数曲线 ParametricFunction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="VGroup群组类.html">VGroup群组类</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="VGroup群组类.html#id1">10. 群组类VGroup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="VGroup群组类.html#arrange">10.1 arrange()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="animation动画变换入门.html" class="btn btn-neutral float-right" title="animation动画变换入门" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../2.getting_started新手上路/making_a_scene.html" class="btn btn-neutral float-left" title="Making a Scene" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

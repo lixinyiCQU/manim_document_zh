@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TextMobject文本类 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="LaTeX文本类TexMobject" href="LaTeX文本类TexMobject.html" />
+    <link rel="prev" title="FontsFormulaColor字体公式色彩" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FontsFormulaColor字体公式色彩</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TextMobject文本类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX文本类TexMobject.html">LaTeX文本类TexMobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text数组.html">text数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_like_arrays.html">text_like_arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chinese等.html">Chinese中文等</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Notation公式符号.html">Notation公式符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX特殊包.html">LaTeX特殊包</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">FontsFormulaColor字体公式色彩</a> &raquo;</li>
+        
+      <li>TextMobject文本类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/4.FontsFormulaColor字体公式色彩/TextMobject文本类.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="textmobject">
+<h1>TextMobject文本类<a class="headerlink" href="#textmobject" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>早期Elteoremadebeethoven有个仓库和配套的youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+这部分不是我写的，我只是想把Markdown、pdf等资料整合编辑成方便的文档格式，以方便查阅使用Manim，cai-hust已授权，表示标明链接仓库就行。</p>
+</div>
+<p>文本类 TextMobject</p>
+<ol class="arabic">
+<li><p><strong>TextMobject(string)：</strong> 传入一个字符串</p>
+<p>字符串可以是普通字符串或LaTeX格式或两者混合：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;This is a regular text&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">displaystyle</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># displaystyle使字体能显示正常大小</span>
+</pre></div>
+</div>
+<p>两者混合则需要使用”$$” 或者”$”包括：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            This is a regular text,</span>
+<span class="s2">            $</span><span class="se">\\</span><span class="s2">displaystyle</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">$,</span>
+<span class="s2">            $$x^2+y^2=a^2$$</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="1565700699069" src="../_images/1565700699069.png" />
+<p class="caption"><span class="caption-text">1565700699069</span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</div>
+<p>自然地，可以用LaTeX调整字体大小：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SizeTextOnLaTeX</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="n">textHuge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">Huge Huge Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">texthuge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">huge huge Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textLARGE</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">LARGE LARGE Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textLarge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">Large Large Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textlarge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">large large Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textNormal</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">normalsize normal Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textsmall</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">small small Text 012.</span><span class="se">\\</span><span class="s2">#!?} Texto normal&quot;</span><span class="p">)</span>
+       <span class="n">textfootnotesize</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">footnotesize footnotesize Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">textscriptsize</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">scriptsize scriptsize Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+       <span class="n">texttiny</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">tiny tiny Texto 012.</span><span class="se">\\</span><span class="s2">#!?} Text normal&quot;</span><span class="p">)</span>
+       <span class="n">textHuge</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+       <span class="n">texthuge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textHuge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textLARGE</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">texthuge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textLarge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textLARGE</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textlarge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textLarge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textNormal</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textlarge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textsmall</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textNormal</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textfootnotesize</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textsmall</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">textscriptsize</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textfootnotesize</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="n">texttiny</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textscriptsize</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">textHuge</span><span class="p">,</span><span class="n">texthuge</span><span class="p">,</span><span class="n">textLARGE</span><span class="p">,</span><span class="n">textLarge</span><span class="p">,</span><span class="n">textlarge</span><span class="p">,</span><span class="n">textNormal</span><span class="p">,</span><span class="n">textsmall</span><span class="p">,</span><span class="n">textfootnotesize</span><span class="p">,</span><span class="n">textscriptsize</span><span class="p">,</span><span class="n">texttiny</span><span class="p">)</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="1565704370228" src="../_images/1565704370228.png" />
+<p class="caption"><span class="caption-text">1565704370228</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+</div>
+</li>
+<li><p><strong>TextMobject(string1,string2,string3,…)：</strong> 传入多个字符串，返回TextMobject数组，可以按照下表索引数组的值</p></li>
+</ol>
+<p>Elteoremadebeethoven的code:</p>
+<p>视频讲解来自 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt?p=11">这里</a>   。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WriteText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;This is a regular text&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/WriteText.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AddText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;This is a regular text&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/AddText.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Formula</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">formula</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;This is a formula&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">formula</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/Formula.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TypesOfText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tipesOfText</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            This is a regular text,</span>
+<span class="s2">            $this is a formula$,</span>
+<span class="s2">            $$this is a formula$$</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">tipesOfText</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TypesOfText.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TypesOfText2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tipesOfText</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            This is a regular text,</span>
+<span class="s2">            $</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">$,</span>
+<span class="s2">            $$x^2+y^2=a^2$$</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">tipesOfText</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TypesOfText2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DisplayFormula</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tipesOfText</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            This is a regular text,</span>
+<span class="s2">            $</span><span class="se">\\</span><span class="s2">displaystyle</span><span class="se">\\</span><span class="s2">frac</span><span class="si">{x}{y}</span><span class="s2">$,</span>
+<span class="s2">            $$x^2+y^2=a^2$$</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">tipesOfText</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/DisplayFormula.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextInCenter</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextInCenter.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextOnTopEdge</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextOnTopEdge.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextOnBottomEdge</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextOnBottomEdge.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextOnRightEdge</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextOnRightEdge.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextOnLeftEdge</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextOnLeftEdge.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextInUpperRightCorner</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="o">+</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextInUpperRightCorner.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextInLowerLeftCorner</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">LEFT</span><span class="o">+</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextInLowerLeftCorner.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomPosition1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Central text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mf">0.25</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/CustomPosition1.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomPosition2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Central text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">UP</span><span class="o">+</span><span class="mi">1</span><span class="o">*</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">UP</span><span class="o">+</span><span class="mi">1</span><span class="o">*</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/CustomPosition2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RelativePosition1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Reference text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textC</span><span class="p">,</span><span class="n">LEFT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/RelativePosition1.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RelativePosition2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Reference text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">UP</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/RelativePosition2.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RotateObject</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Reference text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/RotateObject.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlipObject</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/FlipObject.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SizeTextOnLaTeX</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textHuge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">Huge Huge Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">texthuge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">huge huge Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textLARGE</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">LARGE LARGE Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textLarge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">Large Large Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textlarge</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">large large Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textNormal</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">normalsize normal Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textsmall</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">small small Text 012.</span><span class="se">\\</span><span class="s2">#!?} Texto normal&quot;</span><span class="p">)</span>
+        <span class="n">textfootnotesize</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">footnotesize footnotesize Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textscriptsize</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">scriptsize scriptsize Text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">texttiny</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{</span><span class="se">\\</span><span class="s2">tiny tiny Texto 012.</span><span class="se">\\</span><span class="s2">#!?} Text normal&quot;</span><span class="p">)</span>
+        <span class="n">textHuge</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">texthuge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textHuge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textLARGE</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">texthuge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textLarge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textLARGE</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textlarge</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textLarge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textNormal</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textlarge</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textsmall</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textNormal</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textfootnotesize</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textsmall</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">textscriptsize</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textfootnotesize</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">texttiny</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textscriptsize</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">textHuge</span><span class="p">,</span><span class="n">texthuge</span><span class="p">,</span><span class="n">textLARGE</span><span class="p">,</span><span class="n">textLarge</span><span class="p">,</span><span class="n">textlarge</span><span class="p">,</span><span class="n">textNormal</span><span class="p">,</span><span class="n">textsmall</span><span class="p">,</span><span class="n">textfootnotesize</span><span class="p">,</span><span class="n">textscriptsize</span><span class="p">,</span><span class="n">texttiny</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/SizeTextOnLaTeX.mp4" type="video/mp4">
+</video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextFonts</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textNormal</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;{Roman serif text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textItalic</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">textit{Italic text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textTypewriter</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">texttt{Typewritter text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textBold</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">textbf{Bold text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textSL</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">textsl{Slanted text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textSC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">textsc{Small caps text 012.</span><span class="se">\\</span><span class="s2">#!?} Text&quot;</span><span class="p">)</span>
+        <span class="n">textNormal</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">textItalic</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textNormal</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">textTypewriter</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textItalic</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">textBold</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textTypewriter</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">textSL</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textBold</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">textSC</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">textSL</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">textNormal</span><span class="p">,</span><span class="n">textItalic</span><span class="p">,</span><span class="n">textTypewriter</span><span class="p">,</span><span class="n">textBold</span><span class="p">,</span><span class="n">textSL</span><span class="p">,</span><span class="n">textSC</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<video width="560" height="315" controls>
+    <source src="../_static/Text/TextFonts.mp4" type="video/mp4">
+</video><p>补充一个类似的案例：from   <a class="reference external" href="https://github.com/malhotra5/Manim-Tutorial">manim-tutorial</a>   。</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">makeText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#######Code#######</span>
+        <span class="c1">#Making text</span>
+        <span class="n">first_line</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Manim is fun&quot;</span><span class="p">)</span>
+        <span class="n">second_line</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;and useful&quot;</span><span class="p">)</span>
+        <span class="n">final_line</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Hope you like it too!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">color_final_line</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Hope you like it too!&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Coloring</span>
+        <span class="n">color_final_line</span><span class="o">.</span><span class="n">set_color_by_gradient</span><span class="p">(</span><span class="n">BLUE</span><span class="p">,</span><span class="n">PURPLE</span><span class="p">)</span>
+
+        <span class="c1">#Position text</span>
+        <span class="n">second_line</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">first_line</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">)</span>
+
+        <span class="c1">#Showing text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">first_line</span><span class="p">),</span> <span class="n">Write</span><span class="p">(</span><span class="n">second_line</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">second_line</span><span class="p">),</span> <span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">first_line</span><span class="p">,</span> <span class="n">final_line</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">final_line</span><span class="p">,</span> <span class="n">color_final_line</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<video width="700" height="394" controls>
+    <source src="../_static/manim-tutorial/makeText.mp4" type="video/mp4">
+</video><p>群文件常见问题.pdf中提到，TextMobject 中只能使用 LaTeX 的内置字体族和字体形状，包括：</p>
+<ul class="simple">
+<li><p>罗马字体 textrm{textrm}</p></li>
+<li><p>无衬线字体 textsf{textsf}</p></li>
+<li><p>打字机字体 texttt{texttt}</p></li>
+<li><p>直立形状 textup{textup}</p></li>
+<li><p>意大利形状 textit{textit}</p></li>
+<li><p>倾斜形状 textsl{textsl}</p></li>
+<li><p>小型大写 textsc{textsc}</p></li>
+</ul>
+<p>Q3: 想自定义字体怎么办 使用新版 manim 特有的 Text() 类，方法如下 Text(” 文字 “, font=” 字体”)，其中字体要填 写在计算机内存储的格式 5，但是不能使用 L ATEX 语法书写公式</p>
+<p>Q4: 想用自定义字体写公式怎么办 可以使用群文件里 cigar666 编写的 MyText() 类 。Cigar 牛逼</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LaTeX文本类TexMobject.html" class="btn btn-neutral float-right" title="LaTeX文本类TexMobject" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="FontsFormulaColor字体公式色彩" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

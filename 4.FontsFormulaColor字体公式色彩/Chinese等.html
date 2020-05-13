@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chinese中文等 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Notation公式符号" href="Notation公式符号.html" />
+    <link rel="prev" title="text_like_arrays" href="text_like_arrays.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FontsFormulaColor字体公式色彩</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TextMobject文本类.html">TextMobject文本类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX文本类TexMobject.html">LaTeX文本类TexMobject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text数组.html">text数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_like_arrays.html">text_like_arrays</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chinese中文等</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Notation公式符号.html">Notation公式符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX特殊包.html">LaTeX特殊包</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">FontsFormulaColor字体公式色彩</a> &raquo;</li>
+        
+      <li>Chinese中文等</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/4.FontsFormulaColor字体公式色彩/Chinese等.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chinese">
+<h1>Chinese中文等<a class="headerlink" href="#chinese" title="永久链接至标题">¶</a></h1>
+<p>相关设置见群文件“manim常见问题.pdf”m,Latex等辅助软件要安装正确，可以LaTeX试试运行ctex模板能否正常使用。</p>
+<p>TextMobject 和 TexMobject 使用的都是 LaTeX 语法 其中 TextMobject 文字模式相当于直接在 L ATEX 环境下书写 TexMobject 公式模式使用的是 L ATEX 的 begin{align*} 环境或者可以看成加了 $$ 的环境</p>
+<p>使用 TextMobject 与 TexMobject 书写公式时</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TextMobject(“文字$公式$”)⇐⇒TexMobject(“\text{文字}公式”)</p></li>
+</ul>
+</div></blockquote>
+<p>TextMobject和之间的主要区别TexMobject是，文本数学对象假定所有内容都是纯文本，除非指定带有美元符号的方程式；
+而Tex数学对象假定所有内容都是方程式，除非使用指定了某些内容是纯文本text{}。</p>
+<p>请注意，如果使用原始字符串，例如，不需要双反斜杠。</p>
+<p>常见问题.pdf中提到，TexMobject 中换行是：四个右划线 \，Python 转义右划线，所以涉及到 的均要写成两个 \，而换行在 L ATEX 中 是两个右划线，所以要写成四个6</p>
+<p>class TextMobject_TexMoject(Scene),依稀记得下面代码的来源是manim仓库的issuse。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextMobject_And_TexMoject</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#要先设置CTEX=TRUE再运行这行，调用的是xelatex。text = TextMobject(&quot;中文&quot;)</span>
+        <span class="n">text1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;eng$\lambda$lish&quot;</span><span class="p">,</span><span class="s2">&quot;Plus&quot;</span><span class="p">)</span>
+        <span class="n">text2</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;\lambda</span><span class="se">\\</span><span class="s2">text{Text English}&quot;</span><span class="p">)</span>
+        <span class="n">text3</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\lambda\text{Text English .}&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;これは</span><span class="se">\n</span><span class="s1">manimのあるアニ</span><span class="se">\n</span><span class="s1">メーションです&#39;&#39;&#39;</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="s1">&#39;Source Han Sans&#39;</span><span class="p">)</span>
+       <span class="c1"># text=Text(&quot;中文测试&quot;,font=&quot;Microsoft YaHei&quot;,stroke_width=5)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text3</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#写中文记得修改constants.py</span>
+<span class="c1">#文字演示，包括中英文日语韩语大小颜色粗细变换设置梯度颜色渐变</span>
+<span class="k">class</span> <span class="nc">Demo_Text</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2f={&#39;world&#39;:&#39;Forte&#39;})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, color=BLUE)</span>
+        <span class="c1">#text.set_color(BLUE)</span>
+        <span class="c1">#text[2:3].set_color(BLUE)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2c={&#39;world&#39;:BLUE})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, gradient=(BLUE, GREEN))</span>
+        <span class="c1">#text.set_color_by_gradient(BLUE, GREEN)</span>
+        <span class="c1">#text.set_color_by_t2c({&#39;world&#39;:BLUE})</span>
+        <span class="c1">#text[7:12].set_color_by_gradient(BLUE, GREEN)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2g={&#39;world&#39;:(BLUE, GREEN)})</span>
+        <span class="c1">#text.set_color_by_t2g({&#39;world&#39;:(BLUE, GREEN)})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, font=&#39;Source Han Sans&#39;)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2f={&#39;world&#39;:&#39;Forte&#39;})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, slant=ITALIC)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2s={&#39;world&#39;:ITALIC})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, weight=BOLD)</span>
+        <span class="c1">#text = Text(&#39;Hello, world!&#39;, t2w={&#39;world&#39;:BOLD})</span>
+        <span class="c1">#text = Text(&#39;Hello&#39;, size=5)</span>
+        <span class="c1">#text = Text(&#39;Hello\nWorld&#39;, lsh=1.5)</span>
+        <span class="c1">#text = Text(&#39;Google&#39;,t2c={&#39;[:1]&#39;:&#39;#3174f0&#39;, &#39;[1:2]&#39;:&#39;#e53125&#39;,&#39;[2:3]&#39;:&#39;#fbb003&#39;, &#39;[3:4]&#39;:&#39;#3174f0&#39;,&#39;[4:5]&#39;:&#39;#269a43&#39;, &#39;[5:]&#39;:&#39;#e53125&#39;,})</span>
+        <span class="c1">#script = &#39;&#39;&#39;Hello\n你好\nこれわ，\nTridu33センサーです。\n姓名&#39;&#39;&#39;</span>
+        <span class="c1">#text = Text(script, font=&#39;Source Han Sans&#39;)</span>
+        <span class="c1">#text=Text(&quot;これは\nmanimのあるアニ\nメーションです\n$\lambda$&quot;+&quot;Plusλ&quot;,font=&#39;Source Han Sans&#39;)</span>
+        <span class="c1">#纯文本，不能解析latex文本的公式，但是可以中文输入λ，A=B+C等字符</span>
+        <span class="c1">#要输入中文混杂英文难道只能分别Text合并TexMobject吗？为什么旧版TexMobject中英文混合完全没毛病？</span>
+
+        <span class="n">text</span><span class="o">=</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;これは</span><span class="se">\n</span><span class="s1">manimのあるアニ</span><span class="se">\n</span><span class="s1">メーションです&#39;&#39;&#39;</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="s1">&#39;Source Han Sans&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 增添文本</span>
+<span class="k">class</span> <span class="nc">AddingText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="c1">#Adding text on the screen</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">my_first_text</span><span class="o">=</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Writing with manim is funny&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Source Han Sans&#39;</span><span class="p">)</span>
+        <span class="n">second_line</span><span class="o">=</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;and easy to do!&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Source Han Sans&#39;</span><span class="p">)</span>
+        <span class="n">second_line</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">my_first_text</span><span class="p">,</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="n">third_line</span><span class="o">=</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;for me and you!&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Source Han Sans&#39;</span><span class="p">)</span>
+        <span class="n">third_line</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">my_first_text</span><span class="p">,</span><span class="n">DOWN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">my_first_text</span><span class="p">,</span> <span class="n">second_line</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">second_line</span><span class="p">,</span><span class="n">third_line</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">second_line</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ApplyMethod</span><span class="p">(</span><span class="n">my_first_text</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">UP</span><span class="p">))</span>
+        <span class="c1">###Try uncommenting the following###</span>
+        <span class="c1">#self.play(ApplyMethod(second_line.move_to, LEFT_SIDE-2*LEFT))</span>
+        <span class="c1">#self.play(ApplyMethod(my_first_text.next_to,second_line))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#文本动画</span>
+<span class="k">class</span> <span class="nc">AddingMoreText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="c1">#Playing around with text properties</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">quote</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Imagination is more important than knowledge&quot;</span><span class="p">)</span>
+        <span class="n">quote</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">quote</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">quote2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;A person who never made a mistake never tried anything new&quot;</span><span class="p">)</span>
+        <span class="n">quote2</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">YELLOW</span><span class="p">)</span>
+        <span class="n">author</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;-Albert Einstein&quot;</span><span class="p">)</span>
+        <span class="n">author</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+        <span class="n">author</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">quote</span><span class="o">.</span><span class="n">get_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="o">+</span><span class="n">RIGHT</span><span class="p">),</span><span class="n">DOWN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">quote</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">quote</span><span class="p">,</span><span class="n">quote2</span><span class="p">),</span>
+          <span class="n">ApplyMethod</span><span class="p">(</span><span class="n">author</span><span class="o">.</span><span class="n">move_to</span><span class="p">,</span><span class="n">quote2</span><span class="o">.</span><span class="n">get_corner</span><span class="p">(</span><span class="n">DOWN</span><span class="o">+</span><span class="n">RIGHT</span><span class="p">)</span><span class="o">+</span><span class="n">DOWN</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">LEFT</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ApplyMethod</span><span class="p">(</span><span class="n">author</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
+        <span class="n">author</span><span class="o">.</span><span class="n">match_color</span><span class="p">(</span><span class="n">quote2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">quote</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 旋转高亮</span>
+<span class="k">class</span> <span class="nc">RotateAndHighlight</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="c1">#Rotation of text and highlighting with surrounding geometries</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">square</span><span class="o">=</span><span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">fill_color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text at an angle&quot;</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">bg</span><span class="o">=</span><span class="n">BackgroundRectangle</span><span class="p">(</span><span class="n">label</span><span class="p">,</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">label_group</span><span class="o">=</span><span class="n">VGroup</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">bg</span><span class="p">,</span><span class="n">label</span><span class="p">)</span>  <span class="c1">#Order matters</span>
+        <span class="n">label_group</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">TAU</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">label2</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Boxed text&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">BLACK</span><span class="p">)</span>
+        <span class="n">label2</span><span class="o">.</span><span class="n">bg</span><span class="o">=</span><span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">label2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">,</span><span class="n">fill_color</span><span class="o">=</span><span class="n">RED</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">label2_group</span><span class="o">=</span><span class="n">VGroup</span><span class="p">(</span><span class="n">label2</span><span class="p">,</span><span class="n">label2</span><span class="o">.</span><span class="n">bg</span><span class="p">)</span>
+        <span class="n">label2_group</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">label_group</span><span class="p">,</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="n">label3</span><span class="o">=</span><span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Rainbow&quot;</span><span class="p">)</span>
+        <span class="n">label3</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">label3</span><span class="o">.</span><span class="n">set_color_by_gradient</span><span class="p">(</span><span class="n">RED</span><span class="p">,</span> <span class="n">ORANGE</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="n">GREEN</span><span class="p">,</span> <span class="n">BLUE</span><span class="p">,</span> <span class="n">PURPLE</span><span class="p">)</span>
+        <span class="n">label3</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">label_group</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">label2_group</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">label3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Notation公式符号.html" class="btn btn-neutral float-right" title="Notation公式符号" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="text_like_arrays.html" class="btn btn-neutral float-left" title="text_like_arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

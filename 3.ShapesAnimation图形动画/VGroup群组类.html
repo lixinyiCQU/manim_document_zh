@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VGroup群组类 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="SVG作图" href="SVG作图.html" />
+    <link rel="prev" title="3D graphics三维图形类" href="3D graphics三维图形类.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ShapesAnimation图形动画</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation显示操作.html">animation显示操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_tools.html">visual_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2D graphics二维图形类.html">2D graphics二维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">VGroup群组类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10. 群组类VGroup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arrange">10.1 arrange()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ShapesAnimation图形动画</a> &raquo;</li>
+        
+      <li>VGroup群组类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/3.ShapesAnimation图形动画/VGroup群组类.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vgroup">
+<h1>VGroup群组类<a class="headerlink" href="#vgroup" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>早期Elteoremadebeethoven有个仓库和配套的youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+这部分不是我写的，我只是想把Markdown、pdf等资料整合编辑成方便的文档格式，以方便查阅使用Manim，cai-hust已授权，表示标明链接仓库就行。</p>
+</div>
+<div class="section" id="id1">
+<h2>10. 群组类VGroup<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>可以将多个图像合并为一个组进行批量同步操作(自我理解为Vector Group的缩写)</p>
+<p><strong>someObjectGroup = VGroup(someObject1,someObject2,…)</strong></p>
+<div class="section" id="arrange">
+<h3>10.1 arrange()<a class="headerlink" href="#arrange" title="永久链接至标题">¶</a></h3>
+<p><strong>someObjectGroup.arrange(DIRECTION,aligned_edge =
+DIRECTION,buff=number)</strong></p>
+<p><strong>DIRECTION：</strong>以someObject1,someObject2,…顺序按照此方向排列</p>
+<p><strong>aligned_edge：</strong>对齐</p>
+<p><strong>buff：</strong>成员之间的距离</p>
+<p>例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrangeObjects</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text1</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;text1&quot;</span><span class="p">)</span>
+        <span class="n">text2</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;text2 text2&quot;</span><span class="p">)</span>
+        <span class="n">text3</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;text3 text3 text3&quot;</span><span class="p">)</span>
+        <span class="n">textgroup</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">text1</span><span class="p">,</span><span class="n">text2</span><span class="p">,</span><span class="n">text3</span><span class="p">)</span>
+        <span class="n">textgroup</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span>
+            <span class="n">UP</span><span class="p">,</span>
+            <span class="n">aligned_edge</span> <span class="o">=</span> <span class="n">LEFT</span><span class="p">,</span>
+            <span class="n">buff</span><span class="o">=</span><span class="mf">0.4</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">textgroup</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565844643807.png" />
+</div>
+<p>动画效果：</p>
+<p>因为arrange第一个参数不在config里面，需要单独放在外面</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">text_group</span><span class="o">.</span><span class="n">arrange</span><span class="p">,</span>
+                     <span class="n">UP</span><span class="p">,</span>
+                     <span class="p">{</span><span class="s2">&quot;aligned_edge&quot;</span><span class="p">:</span><span class="n">RIGHT</span><span class="p">,</span><span class="s2">&quot;buff&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SVG作图.html" class="btn btn-neutral float-right" title="SVG作图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="3D graphics三维图形类.html" class="btn btn-neutral float-left" title="3D graphics三维图形类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

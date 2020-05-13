@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Geometric objects &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Coordinate system (TODO)" href="coord_system.html" />
+    <link rel="prev" title="TeX and Text" href="tex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mobject类的属性和方法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tex.html">TeX and Text</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Geometric objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arc-types">Arc types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arc">Arc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcbetweenpoints">ArcBetweenPoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#curvedarrow">CurvedArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#curveddoublearrow">CurvedDoubleArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#circle">Circle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dot">Dot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipse">Ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annularsector">AnnularSector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sector">Sector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annulus">Annulus</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#line-types">Line types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#line">Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dashedline">DashedLine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#elbow">Elbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrow">Arrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#doublearrow">DoubleArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector">Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cubicbezier">CubicBezier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-types">Rectangle types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#polygon">Polygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regularpolygon">RegularPolygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rectangle">Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roundedrectangle">RoundedRectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid">Grid</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coord_system.html">Coordinate system (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brace.html">Brace (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_line_and_plane.html">Number line and Number plane (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="value_tracker.html">Value Tracker (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decimal_numbers.html">Decimal numbers and Integers (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svgs_images.html">SVGs and Images (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Mobject类的属性和方法</a> &raquo;</li>
+        
+      <li>Geometric objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/7.2Mobjects类的属性和方法/geometric.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geometric-objects">
+<h1>Geometric objects<a class="headerlink" href="#geometric-objects" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这一页是elteoremadebeethoven写的 <a class="reference external" href="https://github.com/Elteoremadebeethoven/manim_3feb_docs.github.io/tree/master/source">manim_3feb_docs</a>  <a class="reference external" href="https://elteoremadebeethoven.github.io/manim_3feb_docs.github.io/html/index.html">online</a> 我翻译+做笔记，把资料整合编辑成方便的文档格式，以方便查阅使用Manim。
+为了更好地体验，建议看原作者这里 <a class="reference external" href="https://elteoremadebeethoven.github.io/manim_3feb_docs.github.io/html/tree/mobjects/geometric.html">manim_3feb_docs-mobjects-geometric</a>  ，Sphinx插件安装也没问题，写法是一样的，难道是因为manim版本不同？我的方法和属性没有自动生成^_^# 。</p>
+</div>
+<p>详情可以看这里PyDoc生成的结果 <a class="reference internal" href="../7.ManimLibrary库/manim_类属性方法.html#manimlibclassespropertiesmethods"><span class="std std-ref">manim类属性方法</span></a>  。</p>
+<div class="section" id="arc-types">
+<h2>Arc types<a class="headerlink" href="#arc-types" title="永久链接至标题">¶</a></h2>
+<div class="section" id="arc">
+<h3>Arc<a class="headerlink" href="#arc" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Arc">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arc</code><span class="sig-paren">(</span><em class="sig-param">start_angle=0</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="manimlib.mobject.geometry.Arc.get_arc_center">
+<code class="sig-name descname">get_arc_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.get_arc_center" title="永久链接至目标">¶</a></dt>
+<dd><p>Looks at the normals to the first two
+anchors, and finds their intersection points</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="arcbetweenpoints">
+<h3>ArcBetweenPoints<a class="headerlink" href="#arcbetweenpoints" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.ArcBetweenPoints">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">ArcBetweenPoints</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.ArcBetweenPoints" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="curvedarrow">
+<h3>CurvedArrow<a class="headerlink" href="#curvedarrow" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CurvedArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedArrow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="curveddoublearrow">
+<h3>CurvedDoubleArrow<a class="headerlink" href="#curveddoublearrow" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CurvedDoubleArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedDoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedDoubleArrow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="circle">
+<h3>Circle<a class="headerlink" href="#circle" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Circle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Circle</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="dot">
+<h3>Dot<a class="headerlink" href="#dot" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Dot">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Dot</code><span class="sig-paren">(</span><em class="sig-param">point=array([0.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Dot" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="ellipse">
+<h3>Ellipse<a class="headerlink" href="#ellipse" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Ellipse">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Ellipse</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Ellipse" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="annularsector">
+<h3>AnnularSector<a class="headerlink" href="#annularsector" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.AnnularSector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">AnnularSector</code><span class="sig-paren">(</span><em class="sig-param">start_angle=0</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sector">
+<h3>Sector<a class="headerlink" href="#sector" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Sector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Sector</code><span class="sig-paren">(</span><em class="sig-param">start_angle=0</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Sector" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="annulus">
+<h3>Annulus<a class="headerlink" href="#annulus" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Annulus">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Annulus</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Annulus" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="line-types">
+<h2>Line types<a class="headerlink" href="#line-types" title="永久链接至标题">¶</a></h2>
+<div class="section" id="line">
+<h3>Line<a class="headerlink" href="#line" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Line">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param">start=array([-1.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">end=array([1.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="dashedline">
+<h3>DashedLine<a class="headerlink" href="#dashedline" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.DashedLine">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DashedLine</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="elbow">
+<h3>Elbow<a class="headerlink" href="#elbow" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Elbow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Elbow</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Elbow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="arrow">
+<h3>Arrow<a class="headerlink" href="#arrow" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Arrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">factor</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.scale" title="永久链接至目标">¶</a></dt>
+<dd><p>Default behavior is to scale about the center of the mobject.
+The argument about_edge can be a vector, indicating which side of
+the mobject to scale about, e.g., mob.scale(about_edge = RIGHT)
+scales about mob.get_right().</p>
+<p>Otherwise, if about_point is given a value, scaling is done with
+respect to that point.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="doublearrow">
+<h3>DoubleArrow<a class="headerlink" href="#doublearrow" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.DoubleArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DoubleArrow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="vector">
+<h3>Vector<a class="headerlink" href="#vector" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Vector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param">direction=array([1.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Vector" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="cubicbezier">
+<h3>CubicBezier<a class="headerlink" href="#cubicbezier" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CubicBezier">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CubicBezier</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CubicBezier" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="rectangle-types">
+<h2>Rectangle types<a class="headerlink" href="#rectangle-types" title="永久链接至标题">¶</a></h2>
+<div class="section" id="polygon">
+<h3>Polygon<a class="headerlink" href="#polygon" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Polygon">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Polygon</code><span class="sig-paren">(</span><em class="sig-param">*vertices</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="regularpolygon">
+<h3>RegularPolygon<a class="headerlink" href="#regularpolygon" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.RegularPolygon">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RegularPolygon</code><span class="sig-paren">(</span><em class="sig-param">n=6</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RegularPolygon" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="rectangle">
+<h3>Rectangle<a class="headerlink" href="#rectangle" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Rectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Rectangle</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Rectangle" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="roundedrectangle">
+<h3>RoundedRectangle<a class="headerlink" href="#roundedrectangle" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.RoundedRectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RoundedRectangle</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RoundedRectangle" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="grid">
+<h3>Grid<a class="headerlink" href="#grid" title="永久链接至标题">¶</a></h3>
+<p>新版本manimlib.mobject.geometry.py中没有Grid类，删除了。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coord_system.html" class="btn btn-neutral float-right" title="Coordinate system (TODO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tex.html" class="btn btn-neutral float-left" title="TeX and Text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

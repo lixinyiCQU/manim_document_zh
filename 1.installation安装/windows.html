@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Windows安装Manim &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="ffmpeg" href="ffmpeg.html" />
+    <link rel="prev" title="Mac" href="mac.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation安装</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac.html">Mac</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Windows安装Manim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-system-libraries">Install System Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#path-configuration">Path configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-python-packages-and-manim">Installing python packages and manim需要的库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-installation">Test the installation测试安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-the-waywin">By the way总想对Win用户说点啥</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ffmpeg.html">ffmpeg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.ShapesAnimation图形动画/index.html">ShapesAnimation图形动画</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation安装</a> &raquo;</li>
+        
+      <li>Windows安装Manim</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/1.installation安装/windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="windowsmanim">
+<h1>Windows安装Manim<a class="headerlink" href="#windowsmanim" title="永久链接至标题">¶</a></h1>
+<div class="section" id="install-system-libraries">
+<h2>Install System Libraries<a class="headerlink" href="#install-system-libraries" title="永久链接至标题">¶</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>这一页是EulerTour写的教程,我只是翻译+学习笔记，github早就有很多教程，但是为了方便查询使用，我才整合这么一份文档。</p>
+</div>
+<p>下面是一些需要安装的软件，知乎用户李狗嗨的安装教程 <a class="reference external" href="https://zhuanlan.zhihu.com/p/70243739">manimInstallation</a> 已经写很明白,Q群友推荐一视数学卷毛杨的两个教程https://www.bilibili.com/video/av38126904 <a class="reference external" href="https://www.bilibili.com/read/cv4139851">https://www.bilibili.com/read/cv4139851</a></p>
+<p>Make sure you have <em>Python 3</em> for Windows installed first:</p>
+<p><a class="reference external" href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></p>
+<p>Install ffmpeg:</p>
+<p><a class="reference external" href="https://ffmpeg.org/download.html#build-windows">https://ffmpeg.org/download.html#build-windows</a></p>
+<p>Install sox:</p>
+<p><a class="reference external" href="http://sox.sourceforge.net/Main/HomePage">http://sox.sourceforge.net/Main/HomePage</a></p>
+<p>Install a latex distribution. On Windows MikTex is commonly used:</p>
+<p><a class="reference external" href="https://miktex.org/howto/install-miktex">https://miktex.org/howto/install-miktex</a></p>
+</div>
+<div class="section" id="path-configuration">
+<h2>Path configuration<a class="headerlink" href="#path-configuration" title="永久链接至标题">¶</a></h2>
+<p>建议看知乎相关安装教程，B站专栏也有很多，新版本坑越来越少，nice!
+To invoke commandline without supplying path to the binary
+the PATH environment配置环境变量 needs to be configured. Below are template examples, please change
+the path according to your username and specific python version. Assuming all the
+softwares are installed with no alteration to the installation paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\$username\AppData\local\Programs\Python\Python$version\
+C:\Users\$username\AppData\local\Programs\Python\Python$version\Scripts\
+C:\MikTex\miktex\bin\x64\
+C:\ffmpeg\bin\
+</pre></div>
+</div>
+<p>The path entries should be separated by semicolon.</p>
+</div>
+<div class="section" id="installing-python-packages-and-manim">
+<h2>Installing python packages and manim需要的库<a class="headerlink" href="#installing-python-packages-and-manim" title="永久链接至标题">¶</a></h2>
+<p>Make sure you can start pip using <code class="docutils literal notranslate"><span class="pre">pip</span></code> in your commandline. Then do
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyreadline</span></code> for the <code class="docutils literal notranslate"><span class="pre">readline</span></code> package.</p>
+<p>Grab the pycairo wheel binary <code class="docutils literal notranslate"><span class="pre">pycairo‑1.18.0‑cp37‑cp37m‑win32.whl</span></code> from <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo">https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo</a>
+and install it via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">C:\absolute\path\to\the\whl\file</span></code></p>
+<p>clone the manim repository if you have git <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/3b1b/manim</span></code> or download the zip file from
+the repository page with <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">or</span> <span class="pre">download</span></code> button and unzip it.</p>
+<p>Open the commandline within the manim directory with <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Right</span> <span class="pre">click</span></code> on an empty space in the folder and select <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">command</span> <span class="pre">window</span> <span class="pre">here</span></code></p>
+<p>Install manim python dependencies with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
+</div>
+<div class="section" id="test-the-installation">
+<h2>Test the installation测试安装<a class="headerlink" href="#test-the-installation" title="永久链接至标题">¶</a></h2>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">manim</span> <span class="pre">-h</span></code> and if nothing went wrong during the installation process you should see the help text.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">manim</span> <span class="pre">example_scenes.py</span> <span class="pre">SquareToCircle</span> <span class="pre">-pl</span></code> to render the example scene and the file should play after rendering. The movie file should be
+in <code class="docutils literal notranslate"><span class="pre">media/videos/example_scenes/480p15</span></code></p>
+</div>
+<div class="section" id="by-the-waywin">
+<h2>By the way总想对Win用户说点啥<a class="headerlink" href="#by-the-waywin" title="永久链接至标题">¶</a></h2>
+<p>Visual Studio Code真心好用，ctrl+shift+p打开命令,Preferences:Open Keyboard Shortcuts搜索进入keybings.json,添加代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+shift+c ctrl+shift+d&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;terminalHere.create&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ctrl+shift+c， ctrl+shift+d就能快速打开当前文件目录所在的终端（相当于文件浏览器地址栏输入cmd回车），一般默认cmd也能设置成powershell,wsl等你想要的终端，好处在于不用cd路径，直接快捷键打开路径下的终端。</p>
+<p>如果使用miniConda的话，想要cmd终端使用Conda的CommandPrompt，需要先随便一个路径下新建MyBatFilesPath文件夹（然后添加到环境变量path,好处是很多有用的自定义bat脚本全都放这儿，省心），新建txt重命名 <code class="docutils literal notranslate"><span class="pre">hereConda.bat</span></code>,文本内容如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%windir%<span class="se">\S</span>ystem32<span class="se">\c</span>md.exe <span class="s2">&quot;/K&quot;</span> C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat C:<span class="se">\P</span>rogramData<span class="se">\M</span>iniconda3
+</pre></div>
+</div>
+<p>然后文件浏览器任何manim文件的目录下，地址栏输入hereConda回车，就能打开当前目录Conda的CommandPrompt，输入manim相关命令（我最常使用的方式）。</p>
+<p>最简单双击打开当前目录的Anaconda Powershell Prompt (Miniconda3)直接运行manim方法是：复制Anaconda Powershell Prompt (Miniconda3)到manim目录，右键属性：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%windir%<span class="se">\S</span>ystem32<span class="se">\W</span>indowsPowerShell<span class="se">\v</span><span class="m">1</span>.0<span class="se">\p</span>owershell.exe -ExecutionPolicy ByPass -NoExit -Command <span class="s2">&quot;&amp; &#39;C:\ProgramData\Miniconda3\shell\condabin\conda-hook.ps1&#39; ; conda activate &#39;C:\ProgramData\Miniconda3&#39; ;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%windir%<span class="se">\S</span>ystem32<span class="se">\W</span>indowsPowerShell<span class="se">\v</span><span class="m">1</span>.0<span class="se">\p</span>owershell.exe -ExecutionPolicy ByPass -NoExit -Command <span class="s2">&quot;&amp; &#39;C:\ProgramData\Miniconda3\shell\condabin\conda-hook.ps1&#39; ; conda activate &#39;C:\ProgramData\Miniconda3&#39; ;cd &#39;C:\Users\admin\Documents\Tridu33\(Py\!3b1b-video&#39;;&quot;</span>
+</pre></div>
+</div>
+<p>ps:有一点我没搞懂，visual studio code不能直接使用manim命令，不知道原因是什么，我已经设置了管理员权限，文件夹权限也取消仅读，因为影响不大就没继续折腾，其实我还是很想知道的。ipython，jupyter,python使用Tensorflow等等只要在conda命令能用的都能用，就是执行manim.py的命令会跳转编辑，即manim相关命令vsc的终端中不能直接使用。</p>
+<p>我一般在Visual Studio Code打开终端后输入hereConda，就能使用Conda的相关命令，如果是使用Jupyter的小伙伴，可以试试这个hereJupyter.bat代码：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%windir%<span class="se">\S</span>ystem32<span class="se">\W</span>indowsPowerShell<span class="se">\v</span><span class="m">1</span>.0<span class="se">\p</span>owershell.exe -ExecutionPolicy ByPass -NoExit -Command <span class="s2">&quot;&amp; &#39;C:\ProgramData\Miniconda3\shell\condabin\conda-hook.ps1&#39; ; conda activate &#39;C:\ProgramData\Miniconda3&#39; ;jupyter notebook&quot;</span>
+</pre></div>
+</div>
+<p>Jupyter中，!+命令 执行conda中命令，比如：</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cd  %clear  %cls  %colors  %conda  %config  %connect_info  %copy  %ddir  %debug  %dhist  %dirs  %doctest_mode  %echo  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %macro  %magic  %matplotlib  %mkdir  %more  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %ren  %rep  %rerun  %reset  %reset_selective  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%cmd  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">clear</span>
+<span class="o">%</span><span class="k">cls</span>
+<span class="o">!</span>python -m manim example_scenes.py SquareToCircle -pl
+</pre></div>
+</div>
+<p>就会自动播放预览低分辨率的视频，如果想内嵌进去ipython需要安装写东西，但是windows坑不少，我放弃了安装那个视频内嵌ipynb的功能，文件读写就挺好，vsCode可以用wsl，bash等，但是每次切换，我嫌麻烦就没继续用。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ffmpeg.html" class="btn btn-neutral float-right" title="ffmpeg" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mac.html" class="btn btn-neutral float-left" title="Mac" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

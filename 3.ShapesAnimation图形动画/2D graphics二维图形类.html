@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2D graphics二维图形类 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="3D graphics三维图形类" href="3D graphics三维图形类.html" />
+    <link rel="prev" title="visual_tools" href="visual_tools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ShapesAnimation图形动画</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation显示操作.html">animation显示操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_tools.html">visual_tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2D graphics二维图形类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">二维图形类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dot">1 点Dot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#circle">2 圆形Circle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annulus">3 环Annulus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rectangle">4 长方形Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#square">5 方形Square</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipse">6 椭圆Ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arc">7 弧Arc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line">8 线Line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VGroup群组类.html">VGroup群组类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ShapesAnimation图形动画</a> &raquo;</li>
+        
+      <li>2D graphics二维图形类</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/3.ShapesAnimation图形动画/2D graphics二维图形类.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="d-graphics">
+<h1>2D graphics二维图形类<a class="headerlink" href="#d-graphics" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>早期Elteoremadebeethoven有个仓库和配套的youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+这部分不是我写的，我只是想把Markdown、pdf等资料整合编辑成方便的文档格式，以方便查阅使用Manim，cai-hust已授权，表示标明链接仓库就行。</p>
+</div>
+<div class="section" id="id1">
+<h2>二维图形类<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>** \manimlib\mobject\geometry.py **</p>
+<p>TODO：待完善</p>
+<div class="section" id="dot">
+<h3>1 点Dot<a class="headerlink" href="#dot" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="n">DEFAULT_DOT_RADIUS</span><span class="p">,</span>
+        <span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="circle">
+<h3>2 圆形Circle<a class="headerlink" href="#circle" title="永久链接至标题">¶</a></h3>
+<p>继承自Arc</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">RED</span><span class="p">,</span>
+        <span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;anchors_span_full_range&quot;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="annulus">
+<h3>3 环Annulus<a class="headerlink" href="#annulus" title="永久链接至标题">¶</a></h3>
+<p>继承自圆形</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;outer_radius&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
+        <span class="s2">&quot;mark_paths_closed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rectangle">
+<h3>4 长方形Rectangle<a class="headerlink" href="#rectangle" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span>
+        <span class="s2">&quot;mark_paths_closed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="square">
+<h3>5 方形Square<a class="headerlink" href="#square" title="永久链接至标题">¶</a></h3>
+<p>继承自长方形</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="c1"># 边长</span>
+       <span class="s2">&quot;side_length&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+   <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ellipse">
+<h3>6 椭圆Ellipse<a class="headerlink" href="#ellipse" title="永久链接至标题">¶</a></h3>
+<p>继承自圆形</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arc">
+<h3>7 弧Arc<a class="headerlink" href="#arc" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;num_components&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s2">&quot;anchors_span_full_range&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;arc_center&quot;</span><span class="p">:</span> <span class="n">ORIGIN</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="line">
+<h3>8 线Line<a class="headerlink" href="#line" title="永久链接至标题">¶</a></h3>
+<p><strong>Line(start=LEFT, end=RIGHT, **kwargs)</strong></p>
+<p>start,end:起点终点，形式是np向量</p>
+<p>kwargs为配置信息，继承自VMobject</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;fill_color&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;stroke_color&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;stroke_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="n">DEFAULT_STROKE_WIDTH</span><span class="p">,</span>
+        <span class="c1"># The purpose of background stroke is to have</span>
+        <span class="c1"># something that won&#39;t overlap the fill, e.g.</span>
+        <span class="c1"># For text against some textured background</span>
+        <span class="s2">&quot;background_stroke_color&quot;</span><span class="p">:</span> <span class="n">BLACK</span><span class="p">,</span>
+        <span class="s2">&quot;background_stroke_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;background_stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="c1"># When a color c is set, there will be a second color</span>
+        <span class="c1"># computed based on interpolating c to WHITE by with</span>
+        <span class="c1"># sheen_factor, and the display will gradient to this</span>
+        <span class="c1"># secondary color in the direction of sheen_direction.</span>
+        <span class="s2">&quot;sheen_factor&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;sheen_direction&quot;</span><span class="p">:</span> <span class="n">UL</span><span class="p">,</span>
+        <span class="c1"># Indicates that it will not be displayed, but</span>
+        <span class="c1"># that it should count in parent mobject&#39;s path</span>
+        <span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;pre_function_handle_to_anchor_scale_factor&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+        <span class="s2">&quot;make_smooth_after_applying_functions&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;background_image_file&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;shade_in_3d&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># This is within a pixel</span>
+        <span class="c1"># TODO, do we care about accounting for</span>
+        <span class="c1"># varying zoom levels?</span>
+        <span class="s2">&quot;tolerance_for_point_equality&quot;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>
+        <span class="s2">&quot;n_points_per_cubic_curve&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3D graphics三维图形类.html" class="btn btn-neutral float-right" title="3D graphics三维图形类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="visual_tools.html" class="btn btn-neutral float-left" title="visual_tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

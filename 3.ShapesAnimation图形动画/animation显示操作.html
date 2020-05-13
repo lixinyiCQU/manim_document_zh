@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>animation显示操作 &mdash; Manim V1.3 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="transform" href="transform.html" />
+    <link rel="prev" title="animation动画变换入门" href="animation动画变换入门.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1.installation安装/index.html">Installation安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants常量.html">Manim Constants常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.getting_started新手上路/index.html">Getting Started新手上路</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ShapesAnimation图形动画</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="animation动画变换入门.html">animation动画变换入门</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">animation显示操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#displayoperation">显示操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#textmobject">1 基本步骤（以TextMobject为例）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">5 位置相关的函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">6 播放动画</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">7 设置颜色</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">8 缩放大小</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">9 同步播放动画</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_tools.html">visual_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2D graphics二维图形类.html">2D graphics二维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3D graphics三维图形类.html">3D graphics三维图形类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VGroup群组类.html">VGroup群组类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SVG作图.html">SVG作图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flourier傅里叶动画.html">Flourier傅里叶动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Images图片及变换.html">Images图片及变换</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4.FontsFormulaColor字体公式色彩/index.html">FontsFormulaColor字体公式色彩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5.Coordinate坐标系/index.html">coordinate坐标系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6.camera相机类/index.html">camera相机参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.ManimLibrary库/index.html">ManimLibrary库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.1Animations类的属性和方法/index.html">Animations类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.2Mobjects类的属性和方法/index.html">Mobject类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7.3Scenes类的属性和方法/index.html">Scenes (TODO)类的属性和方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8.常见问题/index.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about关于.html">About关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_sandbox/index.html">manim_sandbox</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ShapesAnimation图形动画</a> &raquo;</li>
+        
+      <li>animation显示操作</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/3.ShapesAnimation图形动画/animation显示操作.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="animation">
+<h1>animation显示操作<a class="headerlink" href="#animation" title="永久链接至标题">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">声明</p>
+<p>早期Elteoremadebeethoven有个仓库和配套的youtude教学视频， <a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim">Animation course with Manim</a> ，小破站有搬运 <a class="reference external" href="https://www.bilibili.com/video/BV1W4411Z7Zt">BV1W4411Z7Zt</a> ，
+然后cai-hust学习并且做了相关的教程MarkDown笔记   <a class="reference external" href="https://github.com/cai-hust/manim-tutorial-CN">cai-hust_manim-tutorial-CN</a> ，
+这部分不是我写的，我只是想把Markdown、pdf等资料整合编辑成方便的文档格式，以方便查阅使用Manim，cai-hust已授权，表示标明链接仓库就行。</p>
+</div>
+<div class="section" id="displayoperation">
+<span id="id1"></span><h2>显示操作<a class="headerlink" href="#displayoperation" title="永久链接至标题">¶</a></h2>
+<div class="section" id="textmobject">
+<h3>1 基本步骤（以TextMobject为例）<a class="headerlink" href="#textmobject" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">WriteText</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;A Text&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">UP</span><span class="o">+</span><span class="mf">0.1</span><span class="o">*</span><span class="n">RIGHT</span><span class="p">)</span>
+             <span class="o">//</span><span class="n">以play为例</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">SomeWriteMethod</span><span class="p">(</span><span class="n">text</span><span class="p">),</span><span class="n">run_time</span> <span class="o">=</span> <span class="n">seconds</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>5 位置相关的函数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="toedge-tocorner">
+<h4><strong>5.1</strong>to<em>edge()和to</em>corner()<a class="headerlink" href="#toedge-tocorner" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject.to_edge(DIRECTION的线性组合,buff = number)</strong></p>
+<p><strong>someObject.to_corner(DIRECTION的四个组合方向,buff = number)</strong></p>
+<p>to_edge参数可以是<strong>任意方向</strong>(方向有哪些见附录中方向常数列表)以及它们的线性组合，如**0.1*RIGHT+0.2*UP**，buff
+两者的边缘的距离</p>
+<p>to_corner仅接受组合方向<strong>UR，UL，DR，DL</strong></p>
+<div class="figure align-default">
+<img alt="" src="../_images/1565752494266.png" />
+</div>
+<ul class="simple">
+<li><p>如果没有to<em>edge和to</em>center默认为中间（<strong>ORIGIN</strong>）</p></li>
+<li><p><strong>someObject.to_edge(UP+RIGHT)</strong>完全等效于<strong>someObject.to_corner(UR)</strong>,其余四个方向同理</p></li>
+</ul>
+</div>
+<div class="section" id="move-to">
+<h4>5.2 move_to()<a class="headerlink" href="#move-to" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject.move_to(DIRECTION的线性组合 or numpy的向量)</strong></p>
+<p>在当前位置移动到对应的位置</p>
+<p>参数可以是<strong>UP，DOWN，LEFT，RIGHT等</strong>的倍数，可以非整数，单位宽度大概是4倍默认字体的行高，<strong>下面只要跟这八个个固定值有关的均是如此</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">someObject</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">UP</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">RIGHT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>参数也可以是numpy向量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">someObject</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>因为图案的位置向量可以由get_center得到，所以可以如下操作：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">someObject</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">someObjectget_center</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">RIGHT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>参数还可以是另外一个图案，表示的位置是该图案的几何中心：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">someObject</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">someObject2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-to">
+<h4>5.3 next_to()<a class="headerlink" href="#next-to" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject1.next_to(someObject2,DIRECTION,buff=number)</strong></p>
+<p>someObject1对于someObject2的相对位置</p>
+<p>与move<em>to的区别在于，next</em>to表示的是边界的距离，而不是中心距离</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1565755487243.png" />
+</div>
+<p>如：text1.next_to(text2,LEFT,buff=2) ：</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1565702556749.png" />
+</div>
+</div>
+<div class="section" id="shift">
+<h4>5.4 shift()<a class="headerlink" href="#shift" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject.shift(DIRECTION*number)：</strong></p>
+<p>自己垂直方向平移</p>
+</div>
+<div class="section" id="rotate">
+<h4>5.5 rotate()<a class="headerlink" href="#rotate" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject.rotate(PI*number或者number，point)：</strong></p>
+<p>逆时针旋转</p>
+<p>如果相对图案为空，则自旋</p>
+<p>如：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RotateObject</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Reference text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565702942360.png" />
+</div>
+<p>否则相对 相对图案旋转：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RotateObject</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">textM</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+        <span class="n">textC</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Reference text&quot;</span><span class="p">)</span>
+        <span class="n">textM</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="n">textC</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">textM</span><span class="p">),</span><span class="n">Write</span><span class="p">(</span><span class="n">textC</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flip">
+<h4>5.6 flip()<a class="headerlink" href="#flip" title="永久链接至标题">¶</a></h4>
+<p><strong>someObject.flip(DIRECTION)：</strong></p>
+<p>按照矢量量方向翻转180度，遵循右手定则。</p>
+<p>如text.flip(UP)：</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1565703056789.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>6 播放动画<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="play">
+<h4>6.1 <strong>play</strong>()<a class="headerlink" href="#play" title="永久链接至标题">¶</a></h4>
+<p>动画效果，可以是多个text，这个函数是多线程的，所以不会阻塞就会进入下一行操作</p>
+<p><em>（如果下一个操作是remove掉text而没有使用wait函数进行等待，最终效果会变成立即销毁text即没有显示text，下面的add也同理）</em></p>
+<ol class="arabic">
+<li><p><strong>play(SomePlayMethod(someObject),run_time =
+seconds)：</strong>播放某种动画方法</p>
+<p>如果希望并行同时播放多个动画，仅仅是python语法问题，给出如下例子模板：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">concurrent</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dot1</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">dot2</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">dotshift</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">dot3</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">dot3</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+
+          <span class="c1"># 单个动画的演示</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">dot1</span><span class="p">))</span>
+        <span class="c1"># 多个动画演示</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+            <span class="n">Transform</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">dot1</span><span class="p">,</span><span class="n">dot1</span><span class="p">],[</span><span class="n">dot2</span><span class="p">,</span><span class="n">dot3</span><span class="p">])</span>
+            <span class="p">])</span><span class="c1"># 故意使用i,j是为了显示zip的使用</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p><strong>play(someObjectX.functionX,functionParamX,</strong></p>
+<blockquote>
+<div><p><strong>someObjectX.functionX,functionParamX,</strong></p>
+<p><strong>……</strong></p>
+<p><strong>run_time=seconds):同时改变某种或多种属性</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeColorAndSizeAnimation</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+          <span class="n">text</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+          <span class="n">text</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span> <span class="n">RIGHT</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">.</span><span class="n">set_color</span><span class="p">,</span> <span class="n">RED</span><span class="p">,</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="someplaymethods">
+<h5>6.1.1 显示动画函数SomePlayMethods<a class="headerlink" href="#someplaymethods" title="永久链接至标题">¶</a></h5>
+<p>动画函数，主要包含下列几个：</p>
+<ul>
+<li><p><em>\manimlibanimationfading.py</em>：渐变效果</p>
+<p><strong>FadeXXX(someObject)</strong></p>
+<ul class="simple">
+<li><p>包含FadeIn，FadeInFromDown，FadeOutAndShiftDown，FadeInFromPoint，FadeInFromLarge等等</p></li>
+<li><p>解释：fade in/out 渐入/出；shift down 垂直下降</p></li>
+</ul>
+</li>
+<li><p><em>\manimlibanimationcreation.py</em>：书写效果</p>
+<p><strong>ShowCreation(someObject)</strong></p>
+<ul class="simple">
+<li><p>无法清楚表达，具体可以自行尝试看效果</p></li>
+</ul>
+<p><strong>UnCreate(someObject)</strong></p>
+<ul class="simple">
+<li><p>倒放ShowCreation动画效果</p></li>
+</ul>
+<p><strong>DrawBorderThenFill(someObject)</strong></p>
+<ul class="simple">
+<li><p>画出边界然后填充</p></li>
+</ul>
+<p><strong>Write(someObject)</strong></p>
+<ul class="simple">
+<li><p>继承自DrawBorderThenFill，增加从左往右逐渐显示的效果</p></li>
+</ul>
+</li>
+<li><p><em>\manimlibanimationtransform.py</em>从一个渐变成另一个</p>
+<ul class="simple">
+<li><p><strong>Transform(someObject1,someObject2)</strong></p></li>
+<li><p><strong>ReplacementTransform(someObject1,someObject2)</strong></p></li>
+</ul>
+<p>两者的异同：</p>
+<p><strong>共同点：</strong>显示特效相同</p>
+<p><strong>不同点：</strong> <strong>Transform</strong>显示在画布上的object永远是someObject1</p>
+<p>伪代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Transform</span><span class="p">(</span><span class="n">someObject1</span><span class="p">,</span><span class="n">someObject2</span><span class="p">):</span>
+  <span class="n">show</span> <span class="n">someObject1</span> <span class="n">on</span> <span class="n">screen</span>
+  <span class="n">show</span> <span class="n">the</span> <span class="n">transform</span> <span class="n">course</span> <span class="n">of</span> <span class="n">someObject1</span> <span class="n">to</span> <span class="n">someObject2</span>
+  <span class="n">someObject1</span> <span class="o">=</span> <span class="n">someObject2</span>
+  <span class="n">show</span> <span class="n">updated</span> <span class="n">someObject1</span> <span class="n">on</span> <span class="n">screen</span>
+</pre></div>
+</div>
+<p><strong>ReplacementTransform</strong>显示在画布上的从someObject1变成了someObject2</p>
+<p>伪代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">someObject1</span><span class="p">,</span><span class="n">someObject2</span><span class="p">):</span>
+  <span class="n">show</span> <span class="n">someObject1</span> <span class="n">on</span> <span class="n">screen</span>
+  <span class="n">show</span> <span class="n">the</span> <span class="n">transform</span> <span class="n">course</span> <span class="n">of</span> <span class="n">someObject1</span> <span class="n">to</span> <span class="n">someObject2</span>
+  <span class="n">someObject1</span> <span class="o">=</span> <span class="n">someObject2</span>
+  <span class="n">show</span> <span class="n">someObject2</span> <span class="n">on</span> <span class="n">screen</span>      <span class="c1"># 不同点在此</span>
+    <span class="n">remove</span> <span class="n">someObject1</span> <span class="kn">from</span> <span class="nn">screen</span> <span class="c1"># 不是从内存删除，仅仅不可见</span>
+</pre></div>
+</div>
+<p>用两段代码来看看效果：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextArray</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;tex1&quot;</span><span class="p">,</span><span class="s2">&quot;text2&quot;</span><span class="p">,</span><span class="s2">&quot;text3&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># 显示的还是text[0]只是text[0]值变成了text[1]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="c1"># 此时没有让text[0]消失，但让text[1]显现并转换为text[2]</span>
+        <span class="c1"># 最终text[0]的值为初始text[1]的值，text[1]的值为初始text[2]的值</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="c1"># 最终屏幕上显示的是text[0]和text[1]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565773952504.png" />
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565773963920.png" />
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565773975419.png" />
+</div>
+<p>将上面的替换成ReplacementTransform：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextArray</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;tex1&quot;</span><span class="p">,</span><span class="s2">&quot;text2&quot;</span><span class="p">,</span><span class="s2">&quot;text3&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># 显示的是text[1]但是text[0]值也变成了text[1]，text[0]消失</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="c1"># 显示text[2],text[1]值也变成了text[2]，text[1]消失</span>
+        <span class="c1"># 最终text[0]的值为初始text[1]的值，text[1]的值为初始text[2]的值</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="c1"># 最终显示的是text[2]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>最后一幅图不一样：</p>
+<div class="figure align-default">
+<img alt="" src="../_images/1565774075040.png" />
+</div>
+<p><strong>如果希望不要改变someObject1的值可以使用：someObject1.copy()进行深度拷贝</strong></p>
+<p>someObject1.copy()执行的伪代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">someObject1</span><span class="o">.</span><span class="n">copy</span><span class="p">():</span>
+    <span class="n">new</span> <span class="nb">object</span>
+  <span class="nb">object</span><span class="o">.</span><span class="n">allValue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">allValue</span>
+  <span class="k">return</span> <span class="nb">object</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>MoveToTarget(someObject):</strong></p>
+<p>仅对自身产生变化</p>
+<p>比较简单，用示例代码即可以看懂：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeColorAndSizeAnimation</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+         <span class="n">text</span><span class="o">.</span><span class="n">generate_target</span><span class="p">()</span>
+         <span class="n">text</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Target&quot;</span><span class="p">)</span>
+         <span class="n">text</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">RED</span><span class="p">)</span>
+         <span class="n">text</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+         <span class="n">text</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+
+         <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">MoveToTarget</span><span class="p">(</span><span class="n">text</span><span class="p">),</span><span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><em>\manimlibanimationgrowing.py</em></p>
+<ul>
+<li><p><strong>GrowFromXXX(someObject)</strong></p>
+<p>GrowFromCenter,GrowFromPoint,GrowFromEdge,GrowArrow等等</p>
+</li>
+</ul>
+</li>
+<li><p><em>manimlibanimationupdate.py</em></p>
+<ul>
+<li><p><strong>UpdateFromFunc(obj,update_function)</strong></p>
+<p>同步播放,很好理解，见例子：</p>
+<p>更多同步并发的播放见<strong>9</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Updater</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Label&quot;</span><span class="p">)</span>\
+               <span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="n">SMALL_BUFF</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="n">SMALL_BUFF</span><span class="p">)</span>
+
+        <span class="c1"># Only works in play</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+                <span class="n">dot</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span><span class="n">UP</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">UpdateFromFunc</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">update_text</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="run-time">
+<h5>6.1.2 run_time<a class="headerlink" href="#run-time" title="永久链接至标题">¶</a></h5>
+<p>动画从开始到结束所用的时间，决定了<strong>动画的快慢</strong>（动画write的快慢是固定的不由runtime决定，但是到达了runtime又没有后面的wait，write会被截断），而非动画播放完了继续等待到run_time指定的时间，注意如果runtime太短可能导致动画write</p>
+</div>
+</div>
+<div class="section" id="rate-func">
+<h4>6.1.3 rate_func<a class="headerlink" href="#rate-func" title="永久链接至标题">¶</a></h4>
+<p>直译为速度函数，即内定的动画函数</p>
+<p>分为三个值：<strong>thereandback来回，linear一去不复返，smooth平滑</strong>（速度先为0，然后加快，到了中间减速最后到达终点为0）</p>
+<p>例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+               <span class="n">triangle</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span><span class="n">RIGHT</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+               <span class="n">rate_func</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span> <span class="c1"># Change this with: linear,smooth</span>
+               <span class="n">run_time</span><span class="o">=</span><span class="mi">5</span>
+           <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add">
+<h4>6.2 add()<a class="headerlink" href="#add" title="永久链接至标题">¶</a></h4>
+<p><strong>add(someObject1,someObject2,…)</strong></p>
+<p>无动画添加文字，可以是多个text</p>
+</div>
+<div class="section" id="wait">
+<h4>6.3 wait()<a class="headerlink" href="#wait" title="永久链接至标题">¶</a></h4>
+<p><strong>wait(int seconds)：</strong></p>
+<p>等待动画停留时间，如果没有参数则默认等待到将动画播放完为止</p>
+</div>
+<div class="section" id="remove">
+<h4>6.4 remove()<a class="headerlink" href="#remove" title="永久链接至标题">¶</a></h4>
+<p><strong>remove(someObject1,someObject2,…)：</strong></p>
+<p>移除text，可以是多个text，注意FadeOut类的动画虽然自带消失效果但是该变量还是会停留在内存中</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>7 设置颜色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><strong>someObject.set_color(COLOR)</strong></p>
+<p>COLOR有哪些见附录的颜色一栏，COLOR本质上是一个字符串所以可以自定义字符串传入：</p>
+<p><strong>someObject.set_color(string)</strong></p>
+<p>如：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">someObject</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;#0000FF&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>8 缩放大小<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p><strong>someObject.scale(number)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextArray</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dot1</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">dot1</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">dot1</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">dot2</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dot1</span><span class="p">,</span><span class="n">dot2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/1565769895077.png" />
+</div>
+</div>
+<div class="section" id="id6">
+<h3>9 同步播放动画<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>TODO：<strong>暂时没有时间理解源码</strong></p>
+<p>让某一个物体（mobject）跟随另一个物体的移动而并行移动（使用其他移动方式，路径）</p>
+<p><em>manimlibmobjectmobject.py</em></p>
+<ul>
+<li><p><strong>addupdater(updatefunction, index=None, call_updater=True)</strong></p>
+<ul class="simple">
+<li><p>update_function：更新函数，函数传入一个object对象，函数内部有一系列对该对象和已知的对象进行的一系列操作，可以是lambda表达式</p></li>
+</ul>
+<p>例子：让一个点在“label”文字右边，随着文字的移动，始终保持在其右侧</p>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># author:TB</span>
+<span class="k">class</span> <span class="nc">AddUpdater1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Label&quot;</span><span class="p">)</span>\
+               <span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="n">SMALL_BUFF</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="c1"># Update function 更新函数</span>
+        <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="n">SMALL_BUFF</span><span class="p">)</span>
+
+        <span class="c1"># Add update function to the objects</span>
+        <span class="c1"># 把更新函数加给对象</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">add_updater</span><span class="p">(</span><span class="n">update_text</span><span class="p">)</span>
+
+        <span class="c1"># 如果想简洁，lambda表达式如下：</span>
+        <span class="c1"># text.add_updater(lambda m: m.next_to(dot,RIGHT,buff=SMALL_BUFF))</span>
+        <span class="c1"># 此时下面的remove_updater(update_text)不能继续使用，需要改为clear_updaters</span>
+
+        <span class="c1"># Add the object again 重新加入text</span>
+        <span class="c1"># 注意这个步骤不能少，否则看不到！！！</span>
+        <span class="c1"># 即使之前加入过，现在还是要重新加入</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">dot</span><span class="o">.</span><span class="n">shift</span><span class="p">,</span><span class="n">UP</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Remove update function</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">remove_updater</span><span class="p">(</span><span class="n">update_text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong>removeupdater(updatefunction)</strong>取消并行播放函数</p></li>
+<li><p><strong>clear_updaters(recursive=True)</strong>取消所有的并行播放函数</p></li>
+<li><p><strong>UpdateFromFunc(Animation)</strong></p>
+<p>见<strong>6.1.1</strong>,注意这个函数仅在play函数中生效，play结束后就不会继续同步</p>
+</li>
+</ul>
+<p>更多例子（有时间再补充）：<a class="reference external" href="https://github.com/Elteoremadebeethoven/AnimationsWithManim/blob/master/English/update_successions/update_successions.py">TB的更新函数页面</a></p>
+<p>补充一个类似的案例：from  <a class="reference external" href="https://github.com/malhotra5/Manim-Tutorial">manim-tutorial</a>  。</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manimlib.imports</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="k">class</span> <span class="nc">Shapes</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#######Code#######</span>
+        <span class="c1">#Making Shapes</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">)</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">DARK_BLUE</span><span class="p">)</span>
+        <span class="n">square</span><span class="o">.</span><span class="n">surround</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+
+        <span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">ring</span><span class="o">=</span><span class="n">Annulus</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">ring2</span> <span class="o">=</span> <span class="n">Annulus</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">ring3</span><span class="o">=</span><span class="n">Annulus</span><span class="p">(</span><span class="n">inner_radius</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">outer_radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">ellipse</span><span class="o">=</span><span class="n">Ellipse</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">DARK_BLUE</span><span class="p">)</span>
+
+        <span class="n">pointers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+            <span class="n">pointers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Line</span><span class="p">(</span><span class="n">ORIGIN</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">8</span><span class="o">*</span><span class="n">i</span><span class="p">),</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">8</span><span class="o">*</span><span class="n">i</span><span class="p">),</span> <span class="mi">0</span><span class="p">]),</span><span class="n">color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">))</span>
+
+        <span class="c1">#Showing animation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">circle</span><span class="p">),</span> <span class="n">FadeIn</span><span class="p">(</span><span class="n">ring</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">ring</span><span class="p">,</span><span class="n">ring2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">ring2</span><span class="p">,</span> <span class="n">ring</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">square</span><span class="p">),</span> <span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">ellipse</span><span class="p">),</span> <span class="n">Transform</span><span class="p">(</span><span class="n">ring2</span><span class="p">,</span> <span class="n">ring3</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">pointers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<video width="700" height="394" controls>
+    <source src="../_static/manim-tutorial/Shapes.mp4" type="video/mp4">
+</video></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transform.html" class="btn btn-neutral float-right" title="transform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="animation动画变换入门.html" class="btn btn-neutral float-left" title="animation动画变换入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
